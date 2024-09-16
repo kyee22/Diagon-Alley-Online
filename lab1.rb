@@ -6,30 +6,19 @@
 
 def mfp(m)
   # Helper function #1:
-  def product_digit(num)
-    product = 1
-    while num > 0
-      digit = num % 10
-      if digit != 0 then
-        product *= digit
-      end
-      num /= 10
-    end
-    product
+  def product_of_digits(num)
+    return num.digits.reject(&:zero?).reduce(&:*)
   end
 
   # Helper function #2:
   def max_prime_factor(num)
     # Special Case: there is no max prime factor for integer 1
-    if num == 1 then return 1 end
+    return 1 if num == 1
 
     # General Cases
     factor = 2
-    while factor < num
-      num % factor == 0 ? num /= factor : factor = factor + 1
-    end
-
-    num
+    factor += 1 until num % factor == 0 && (num /= factor) == 1
+    factor
   end
 
   # calculate sum: version 1
@@ -37,7 +26,7 @@ def mfp(m)
   # 1.upto(m) {|x| sum = sum + product_digit(x)}
 
   # calculate sum: version 2
-  sum = (1..m).sum{|x| product_digit(x)}
+  sum = (1..m).sum{|x| product_of_digits(x)}
   max_prime_factor(sum)
 end
 
