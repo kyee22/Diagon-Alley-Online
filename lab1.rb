@@ -17,7 +17,7 @@ def mfp(m)
 
     # General Cases
     factor = 2
-    factor += 1 until num % factor == 0 && (num /= factor) == 1
+    num % factor == 0 ? num /= factor : factor += 1 while factor < num
     factor
   end
 
@@ -30,4 +30,5 @@ def mfp(m)
   max_prime_factor(sum)
 end
 
+# puts mfp(9999)
 # puts mfp(1), mfp(2), mfp(9999), mfp(10000)
