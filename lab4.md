@@ -66,11 +66,11 @@ end
 
 ## Local Test
 
-为了更好的帮助测试，准备了如下测试用例
+为了更好的帮助测试，准备了如下测试用例：
 
 *   `test_case1` ：来自 statement 的示例；
 *   `test_case2` ~ `test_case3` ：来自公开的测试用例；
-*   `test_case4`  ~ `test_case16` ：来自 [LeetCode]()
+*   `test_case4`  ~ `test_case16` ：来自 [LeetCode](https://leetcode.cn/problems/decode-ways/description/)。
 
 利用 Python 的 `pytest` 测试框架来构建本地的单元测试。运行准备的测试用例，测试结果如下
 

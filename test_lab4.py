@@ -16,7 +16,7 @@ def test_decode_ways_case2():
 def test_decode_ways_case3():
     assert run_ruby(0) == 0
 
-''' Test Cases from LeetCode<https://leetcode.cn/problems/decode-ways> '''
+''' Test Cases from LeetCode<https://leetcode.cn/problems/decode-ways/description/> '''
 def test_decode_ways_case4():
     assert run_ruby(226) == 3
 
