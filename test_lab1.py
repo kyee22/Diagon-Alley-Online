@@ -17,3 +17,7 @@ def test_mfp_case3():
 
 def test_mfp_case4():
     assert run_ruby(2) == 3  # 可以添加更多的测试用例
+
+def test_mfp_case5():
+    assert run_ruby(999) == 103  # 可以添加更多的测试用例
+

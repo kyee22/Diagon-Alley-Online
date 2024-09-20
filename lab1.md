@@ -32,7 +32,7 @@ end
 
 ## Local Test
 
-利用 Python 的 `Pytest` 框架来构建本地的单元测试，从而运行部分样例的测试：
+利用 Python 的 `pytest` 测试框架来构建本地的单元测试。运行公开的部分样例，测试结果如下
 
 ```bash
 $ pytest test_lab1.py 

@@ -1,4 +1,11 @@
-# Lab 2: Case equality operator `===` in Ruby
+# 作业2： case equality 调研
+
+>   *   通过网上搜索资料，结合实际实验，给出 **case equality** 操作符的语义分析
+>   *   用Markdown语法写一个文档
+>       *   https://en.wikipedia.org/wiki/Markdown
+>
+>   *   文件名：`lab2.md`
+>   *   提交到 git `main` 分枝根目录
 
 $Author:\text{Yixuan Kuang}$
 

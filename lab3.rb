@@ -12,6 +12,12 @@ def count_ones(n)
   # binary_rep_lst.delete("0")
   # return binary_rep_lst.size
 
+  # Version 2:
+  # return n.to_s(2).chars.reject{|x| x == "0"}.size
+
+  # Version 3:
+  # return n.to_s(2).chars.filter{|x| x == "1"}.size
+
   # Version 2
   return n.to_s(2).chars.count("1")
 end
