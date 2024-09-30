@@ -3,11 +3,16 @@
 ##                Lab5 by Yixuan Kuang                      ##
 ##############################################################
 
-keys, values = gets().split(" "), gets().split(" ")
-hash = Hash.new(0)
-keys.each_with_index {|key, index| hash[key] = values[index]}
-puts hash.to_s
-# puts keys.to_s, values.to_s
+# keys, values = gets().split(" "), gets().split(" ")
+# hash = Hash.new(0)
+# keys.each_with_index {|key, index| hash[key] = values[index]}
+# puts hash.to_s
+
+keys = gets.split(" ")
+values = gets.split(" ")
+hash = Hash[keys.zip(values)]
+puts hash.inspect
+
 
 
 # def twice
