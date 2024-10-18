@@ -28,6 +28,12 @@ module Cookbook3
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
+    # 设置应用程序的字符集为 UTF-8
+    config.encoding = "utf-8"
+
+    # 设置 Active Record 默认的字符集为 UTF-8
+    config.active_record.default_timezone = :local
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

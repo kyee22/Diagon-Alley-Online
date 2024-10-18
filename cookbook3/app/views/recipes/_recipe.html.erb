@@ -9,4 +9,24 @@
     <%= recipe.category&.name %>
   </p>
 
+  <p>
+    <strong>Instructions:</strong>
+    <details>
+      <summary style="cursor: pointer; font-weight: bold; color: #999;">show</summary>
+      <div>
+        <% if recipe&.instructions.present? %>
+          <%= h(recipe&.instructions) %>
+        <% else %>
+          No instructions available (ง •̀_•́)ง
+        <% end %>
+      </div>
+    </details>
+
+  </p>
+
+<!--  <p>-->
+<!--    <strong>Instructions:</strong>-->
+    <%#= recipe&.instructions %>
+<!--  </p>-->
+
 </div>

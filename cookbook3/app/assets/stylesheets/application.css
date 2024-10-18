@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+/* 设置默认字体 */
+/* 或者使用 Google Fonts 提供的字体 */
+/* app/assets/stylesheets/application.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Color+Emoji&display=swap');
+
+body {
+    font-family:  'Noto Sans SC', 'Apple SD Gothic Neo', 'Microsoft YaHei', 'Arial Unicode MS', sans-serif;
+}
+
+/* 隐藏默认内容 */
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+/* 按钮样式 */
+.accordion-button {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* 按钮悬停样式 */
+.accordion-button:hover {
+    background-color: #ddd;
+}
+
+/* 按钮激活状态 */
+.active {
+    background-color: #ddd;
+}
