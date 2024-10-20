@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Cookbook3</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<body class="welcome-page">
+  <div class="container mt-5 text-center">
+    <h1>Welcome to Cookbook3!</h1>
+    <p class="lead">Explore our collection of delicious recipes.</p>
+
+    <!-- 添加 rect-btn 类来应用矩形样式 -->
+    <%= link_to "👉 Categories 👈", categories_path, class: "button-blue" %>
+    <%= link_to "👉 Recipes 👈", recipes_path, class: "button-blue" %>
+  </div>
+</body>
+</html>

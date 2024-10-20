@@ -18,12 +18,16 @@
   </head>
 
   <body>
-    <nav style="background-color: #e0f7fa; padding: 10px;">
-      <ul style="list-style-type: none; margin: 0; padding: 0; display: flex;">
-        <li style="margin-right: 20px;"><%= link_to "Recipes", recipes_path %></li>
-        <li><%= link_to "Categories", categories_path %></li>
-      </ul>
-    </nav>
+    <% if current_page?("/") %>
+      <!-- 这里是首页特有的内容 -->
+    <% else %>
+      <nav style="background-color: white; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 15px; position: sticky; top: 0; left: 0; width: 100%; z-index: 1000;">
+        <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; ">
+          <li style="margin-right: 20px;"><%= link_to "Recipes", recipes_path %></li>
+          <li><%= link_to "Categories", categories_path %></li>
+        </ul>
+      </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
