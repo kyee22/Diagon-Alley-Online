@@ -48,8 +48,8 @@ button {
     transition: all 0.5s ease-in-out; /* 添加过渡动画 */
 }
 
-.button-blue {
-    background-color: #0d6efd; /* 蓝色背景 */
+.button-green {
+    background-color: #007E33; /* 蓝色背景 */
     color: white; /* 白色文本 */
     width: 130px; /* 设置宽度 */
     height: 30px; /* 设置高度 */
@@ -61,28 +61,3 @@ button {
     text-decoration: none; /* 去掉下划线 */
 }
 
-.btn {
-    border-radius: 0; /* 去除按钮的圆角 */
-    padding: 10px 20px; /* 内边距 */
-    font-size: 16px; /* 字体大小 */
-    transition: all 0.3s ease; /* 平滑过渡效果 */
-    text-decoration: none;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* 手动指定一个更深的颜色 */
-    color: white; /* 鼠标悬停时字体颜色 */
-}
-
-.btn-primary {
-    color: white; /* 按钮字体颜色 */
-    background-color: #007bff; /* 按钮背景颜色 */
-    border-color: #007bff; /* 按钮边框颜色 */
-}
-
-.rect-btn {
-    border-radius: 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
