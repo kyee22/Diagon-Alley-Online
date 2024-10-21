@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @blog %>
+
+<div>
+  <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
+  <%= link_to "Back to blogs", blogs_path %>
+
+  <%= link_to "Destroy this blog", @blog,
+              data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+
+  <h2>Comments</h2>
+  <div id="comments">
+    <%= render @blog.comments %>
+  </div>
+</div>
+
+
+
+
+<%= form_with model: [@blog, Comment.new] do |form| %>
+  <div>
+    <%= form.label :contont, "New Comment", style: "display: block" %>
+    <%= form.text_area :contont, :rows => 10 %>
+  </div>
+
+  <div>
+    <%= form.submit "Add Comment" %>
+  </div>
+<% end %>
