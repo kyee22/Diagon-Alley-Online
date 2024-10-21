@@ -6,7 +6,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get comments_url
+    get blog_comments_url(@comment.blog)
     assert_response :success
   end
 
