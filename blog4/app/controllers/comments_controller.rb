@@ -3,20 +3,24 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
+    @blog = Blog.find(params[:blog_id])
     @comments = Comment.all
   end
 
   # GET /comments/1 or /comments/1.json
   def show
+    @blog = Blog.find(params[:blog_id])
   end
 
   # GET /comments/new
   def new
+    @blog = Blog.find(params[:blog_id])
     @comment = Comment.new
   end
 
   # GET /comments/1/edit
   def edit
+    @blog = Blog.find(params[:blog_id])
   end
 
   # POST /comments or /comments.json
@@ -39,9 +43,10 @@ class CommentsController < ApplicationController
 
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
+    @blog = Blog.find(params[:blog_id])
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: "Comment was successfully updated." }
+        format.html { redirect_to blog_comment_path(@blog, @comment), notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,10 +57,11 @@ class CommentsController < ApplicationController
 
   # DELETE /comments/1 or /comments/1.json
   def destroy
+    @blog = Blog.find(params[:blog_id])
     @comment.destroy!
 
     respond_to do |format|
-      format.html { redirect_to comments_path, status: :see_other, notice: "Comment was successfully destroyed." }
+      format.html { redirect_to blog_comments_path(@blog), status: :see_other, notice: "Comment was successfully destroyed." }
       format.json { head :no_content }
     end
   end
