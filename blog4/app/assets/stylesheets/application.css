@@ -53,3 +53,26 @@ button {
     text-decoration: none; /* 去掉下划线 */
 }
 
+/*****  Begin style layout  *****/
+html, body {
+    height: 100%;
+}
+
+#left-panel {
+    float: left;
+    margin: 20px;
+}
+
+#main-panel {
+    flex: 1;
+    float: left;
+    border-left: 1px solid;
+    padding: 10px
+}
+
+#footer {
+    text-align: center;
+    clear: both
+}
+/*****  End style layout  *****/
+
