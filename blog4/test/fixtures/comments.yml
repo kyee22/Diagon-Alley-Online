@@ -3,7 +3,9 @@
 one:
   blog: one
   contont: MyText
+  user: one
 
 two:
   blog: two
   contont: MyText
+  user: one

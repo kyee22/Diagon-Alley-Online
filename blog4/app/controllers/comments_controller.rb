@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
+  before_action :authorize_user!, only: %i[edit update destroy]
 
   # GET /comments or /comments.json
   def index
@@ -28,6 +29,7 @@ class CommentsController < ApplicationController
     @blog = Blog.find(params[:blog_id])
     @comment = Comment.new(comment_params)
     @comment.blog = @blog
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
@@ -67,7 +69,14 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+    def authorize_user!
+      unless @comment.user == current_user
+        flash[:alert] = "You are not authorized to perform this action."
+        redirect_to @comment.blog # 或者跳转到其他安全页面
+      end
+    end
+
+  # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
     end

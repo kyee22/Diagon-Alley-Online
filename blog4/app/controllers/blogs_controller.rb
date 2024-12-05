@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy ]
+  before_action :authenticate, except: [:index, :show]
+  before_action :authorize_user!, only: %i[edit update destroy]
 
   # GET /blogs or /blogs.json
   def index
@@ -22,6 +24,7 @@ class BlogsController < ApplicationController
   # POST /blogs or /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.user = current_user
 
     respond_to do |format|
       if @blog.save
@@ -58,13 +61,23 @@ class BlogsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.find(params[:id])
+  def authorize_user!
+    unless @blog.user == current_user
+      redirect_to blogs_path # 或者跳转到其他安全页面
     end
+  end
 
-    # Only allow a list of trusted parameters through.
-    def blog_params
-      params.require(:blog).permit(:title, :content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_blog
+    @blog = Blog.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def blog_params
+    params.require(:blog).permit(:title, :content)
+  end
+
+  def authenticate
+    redirect_to login_users_url, alert: 'Must login!' unless current_user
+  end
 end

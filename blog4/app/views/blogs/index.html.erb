@@ -5,14 +5,24 @@
 <h1>Listing Blogs</h1>
 
 <div id="blogs">
+  <% if @error_message %>
+    <div style="color: red">
+      <h2><%= @error_message %></h2>
+    </div>
+  <% end %>
+
   <% @blogs.each do |blog| %>
     <%#= render blog %>
     <p>
-      <%= link_to blog.title, blog %> Posted
-      <%= time_ago_in_words blog.created_at %> ago. |
-      <%= link_to "edit", edit_blog_path(blog) %>
-      <%= link_to "destroy", blog,
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to blog.title, blog %> Posted by
+      <%= blog.user.username %>
+      <%= time_ago_in_words blog.created_at %> ago.
+      <% if current_user == blog.user %>
+         |
+        <%= link_to "edit", edit_blog_path(blog) %>
+        <%= link_to "destroy", blog,
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
     </p>
     <pre><%= blog.content %></pre>
   <% end %>
