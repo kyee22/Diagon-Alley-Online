@@ -1,31 +1,42 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4">
+  <p class="text-success"><%= notice %></p>
 
-<% content_for :title, "Blogs" %>
+  <% content_for :title, "Blogs" %>
 
-<h1>Listing Blogs</h1>
+  <h1 class="mb-4">Listing Blogs</h1>
 
-<div id="blogs">
-  <% if @error_message %>
-    <div style="color: red">
-      <h2><%= @error_message %></h2>
-    </div>
-  <% end %>
-
-  <% @blogs.each do |blog| %>
-    <%#= render blog %>
-    <p>
-      <%= link_to blog.title, blog %> Posted by
-      <%= link_to blog.user.username, user_path(blog.user) %>
-      <%= time_ago_in_words blog.created_at %> ago.
-      <% if current_user == blog.user %>
-         |
-        <%= link_to "edit", edit_blog_path(blog) %>
-        <%= link_to "destroy", blog,
-                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <div id="blogs">
+    <% if @error_message %>
+      <div class="alert alert-danger">
+        <h2><%= @error_message %></h2>
+      </div>
     <% end %>
-    </p>
-    <pre><%= blog.content %></pre>
-  <% end %>
-</div>
 
-<%= link_to "New blog", new_blog_path %>
+    <% @blogs.each do |blog| %>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to blog.title, blog, class: "text-decoration-none text-primary" %>
+          </h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Posted by <%= link_to blog.user.username, user_path(blog.user), class: "text-decoration-none" %>
+            <span class="text-muted"> | <%= time_ago_in_words blog.created_at %> ago</span>
+          </h6>
+          <% if current_user == blog.user %>
+            <div class="mt-2">
+              <%= link_to "edit", edit_blog_path(blog), class: "btn btn-outline-primary btn-sm me-2" %>
+              <%= link_to "destroy", blog,
+                          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                          class: "btn btn-outline-danger btn-sm" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-footer">
+          <pre class="mb-0"><%= blog.content %></pre>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New blog", new_blog_path, class: "btn btn-primary mt-3" %>
+</div>
