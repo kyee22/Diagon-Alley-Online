@@ -1,17 +1,42 @@
 <div id="<%= dom_id user %>">
+  <% if current_user != user %>
+    <% if current_user.followings.include?(user) %>
+      <%= button_to "Unfollow", unfollow_user_path(user), method: :delete, class: "btn btn-danger" %>
+    <% else %>
+      <%= button_to "Follow", follow_user_path(user), method: :post, class: "btn btn-primary" %>
+    <% end %>
+  <% end %>
+
   <p>
     <strong>Username:</strong>
     <%= user.username %>
   </p>
 
-  <p>
-    <strong>Password:</strong>
-    <%= user.password %>
-  </p>
+  <% if current_user == user %>
+    <p>
+      <strong>Password:</strong>
+      <%= user.password %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Email:</strong>
     <%= user.email %>
   </p>
+
+  <strong>Followings</strong>
+  <ul>
+    <% user.followings.each do |following| %>
+      <li><%= link_to following.username, user_path(following) %></li>
+    <% end %>
+  </ul>
+
+  <strong>Followers</strong>
+  <ul>
+    <% user.followers.each do |follower| %>
+      <li><%= link_to follower.username, user_path(follower) %></li>
+    <% end %>
+  </ul>
+
 
 </div>

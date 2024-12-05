@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate, only: [ :login, :do_login, :new, :create ]
 
   # GET /users or /users.json
   def index
@@ -75,6 +76,43 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  ### Begin actions about following
+  def follow
+    user_to_follow = User.find(params[:id]) # 获取被关注用户
+    if current_user.followings.include?(user_to_follow)
+      flash[:notice] = "You are already following this user."
+    else
+      current_user.followings << user_to_follow
+      flash[:success] = "You are now following #{user_to_follow.username}."
+    end
+    redirect_to user_path(user_to_follow)
+  end
+
+  def unfollow
+    user_to_unfollow = User.find(params[:id]) # 获取取消关注的用户
+    if current_user.followings.include?(user_to_unfollow)
+      current_user.followings.delete(user_to_unfollow)
+      flash[:success] = "You have unfollowed #{user_to_unfollow.username}."
+    else
+      flash[:notice] = "You are not following this user."
+    end
+    redirect_to user_path(user_to_unfollow)
+  end
+
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers
+  end
+  ### End actions about following
+
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

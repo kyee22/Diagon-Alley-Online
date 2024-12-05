@@ -15,7 +15,7 @@
     <%#= render blog %>
     <p>
       <%= link_to blog.title, blog %> Posted by
-      <%= blog.user.username %>
+      <%= link_to blog.user.username, user_path(blog.user) %>
       <%= time_ago_in_words blog.created_at %> ago.
       <% if current_user == blog.user %>
          |

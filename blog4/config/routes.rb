@@ -12,6 +12,18 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+
+
+  resources :users do
+    member do
+      post :follow
+      delete :unfollow
+      get :followings
+      get :followers
+    end
+  end
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
