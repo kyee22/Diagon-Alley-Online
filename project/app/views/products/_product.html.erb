@@ -50,4 +50,7 @@
   <% else %>
     <%= button_to '添加到收藏夹', favorite_product_favorite_path(product), method: :post, class: 'btn btn-primary' %>
   <% end %>
+
+  <!-- 添加加入购物车的按钮 -->
+  <%= button_to '加入购物车', product_cart_items_path(product), method: :post, class: 'btn btn-success' %>
 </div>

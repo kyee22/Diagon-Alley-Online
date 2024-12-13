@@ -18,7 +18,7 @@ class CartItemsController < ApplicationController
         format.html { redirect_to cart_items_path, notice: "已将产品加入购物车！" }
         format.json { render :show, status: :created, location: @cart_item }
       else
-        format.html { redirect_to products_path, status: :unprocessable_entity }
+        format.html { redirect_to products_path, notice: "加入失败！", status: :unprocessable_entity }
         format.json { render json: @cart_item.errors, status: :unprocessable_entity }
       end
     end
@@ -38,7 +38,7 @@ class CartItemsController < ApplicationController
   # 更新购物车项：修改产品数量
   def update
     @cart_item = current_user.cart_items.find(params[:id])
-    
+
     respond_to do |format|
       if @cart_item.update(cart_item_params)
         format.html { redirect_to cart_item_params, notice: "购物车已更新！" }
