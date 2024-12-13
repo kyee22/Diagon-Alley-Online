@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :delivery_addresses
+  devise_for :users
+  resources :delivery_addresses, only: [:new, :create, :edit, :update, :destroy, :index]
+
   resources :products
   resources :designs
   resources :sizes

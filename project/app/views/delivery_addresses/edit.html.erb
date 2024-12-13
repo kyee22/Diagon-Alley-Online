@@ -1,0 +1,12 @@
+<% content_for :title, "Editing delivery address" %>
+
+<h1>Editing delivery address</h1>
+
+<%= render "form", delivery_address: @delivery_address %>
+
+<br>
+
+<div>
+  <%= link_to "Show this delivery address", @delivery_address %> |
+  <%= link_to "Back to delivery addresses", delivery_addresses_path %>
+</div>

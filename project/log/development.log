@@ -2645,3 +2645,818 @@ Processing by ProductsController#show as HTML
 Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.6ms (7 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:58:44 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (1.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.5ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 132.2ms | GC: 0.0ms)
+  [1m[36mCACHE Color Load (0.3ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.2ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 37.5ms | GC: 16.2ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 197.9ms | GC: 16.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 335.9ms | GC: 35.1ms)
+Completed 200 OK in 395ms (Views: 329.9ms | ActiveRecord: 9.4ms (13 queries, 2 cached) | GC: 35.1ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:58:44 +0800
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:58:44 +0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71", "filename"=>"OIP-C"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8", "filename"=>"kate-turbinska-music-lute"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: 4x1qa3v6tckc0ztl7ymswdcms2uh (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6MDM6NDQuNzQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5f144cce65f8b592e1b15e2d3e55eea8fedf4a0/OIP-C.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (6.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6MDM6NDQuNzQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5f144cce65f8b592e1b15e2d3e55eea8fedf4a0/OIP-C.jpg
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: lj2umgonmxdhe82nwuhtnx4wtpo2 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjAzOjQ0Ljc2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d929ab863030698d69bd87d440eea8c9edfb8442/kate-turbinska-music-lute.jpg)[0m
+Completed 302 Found in 31ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjAzOjQ0Ljc2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d929ab863030698d69bd87d440eea8c9edfb8442/kate-turbinska-music-lute.jpg
+Completed 302 Found in 32ms (ActiveRecord: 5.8ms (1 query, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6MDM6NDQuNzQ4WiIsInB1ciI6ImJsb2Jfa2V5In19--d5f144cce65f8b592e1b15e2d3e55eea8fedf4a0/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:58:44 +0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjAzOjQ0Ljc2MFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d929ab863030698d69bd87d440eea8c9edfb8442/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:58:44 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:58:44 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-12-13 20:58:47 +0800
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/products/_form.html.erb:34
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  ↳ app/views/products/_form.html.erb:35
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/products/_form.html.erb:37
+  Rendered products/_form.html.erb (Duration: 42.4ms | GC: 15.5ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 45.1ms | GC: 15.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.5ms | GC: 15.5ms)
+Completed 200 OK in 63ms (Views: 48.5ms | ActiveRecord: 0.7ms (4 queries, 0 cached) | GC: 17.3ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2024-12-13 20:59:12 +0800
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"没有图片的魔法", "description"=>"上下文存储", "price"=>"65", "sales"=>"0", "color_id"=>"1", "type_id"=>"3", "size_id"=>"1", "design_id"=>"1"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "没有图片的魔法"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "sales", "created_at", "updated_at", "color_id", "type_id", "size_id", "design_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "没有图片的魔法"], ["description", "上下文存储"], ["price", 65.0], ["sales", 0], ["created_at", "2024-12-13 12:59:12.096381"], ["updated_at", "2024-12-13 12:59:12.096381"], ["color_id", 1], ["type_id", 3], ["size_id", 1], ["design_id", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/products/3
+Completed 302 Found in 64ms (ActiveRecord: 12.1ms (6 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2024-12-13 20:59:12 +0800
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 38.6ms | GC: 1.1ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 43.3ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | GC: 1.6ms)
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 0.5ms (6 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/products/3/edit" for 127.0.0.1 at 2024-12-13 20:59:12 +0800
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mColor Load (0.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/products/_form.html.erb:34
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  ↳ app/views/products/_form.html.erb:35
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/products/_form.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_form.html.erb:41
+  Rendered products/_form.html.erb (Duration: 19.0ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 20.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.3ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:59:13 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 37.1ms | GC: 14.5ms)
+  [1m[36mCACHE Color Load (0.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 9.7ms | GC: 0.4ms)
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mCACHE Design Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 5.5ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 55.3ms | GC: 14.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 58.2ms | GC: 15.3ms)
+Completed 200 OK in 64ms (Views: 58.3ms | ActiveRecord: 1.0ms (18 queries, 4 cached) | GC: 15.3ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20241213130409)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241213130409') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRoleToUsers (20241213130544)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "role" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241213130544') RETURNING "version"[0m
+  [1m[36mTRANSACTION (14.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products" for 127.0.0.1 at 2024-12-13 21:08:43 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (1.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.5ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 155.4ms | GC: 0.0ms)
+  [1m[36mCACHE Color Load (0.6ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.2ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 26.4ms | GC: 0.0ms)
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mCACHE Design Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 33.6ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 244.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 376.2ms | GC: 19.8ms)
+Completed 200 OK in 429ms (Views: 370.5ms | ActiveRecord: 10.7ms (18 queries, 4 cached) | GC: 19.8ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 21:08:44 +0800
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 21:08:44 +0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71", "filename"=>"OIP-C"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8", "filename"=>"kate-turbinska-music-lute"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (6.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (1.4ms) [0m[34mGenerated URL for file at key: 4x1qa3v6tckc0ztl7ymswdcms2uh (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6MTM6NDQuMzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--ad8e22b23284c06927ad5bc5a9d15449e15d24a1/OIP-C.jpg)[0m
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: lj2umgonmxdhe82nwuhtnx4wtpo2 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjEzOjQ0LjMxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32ba9c201b5fe267137aeda0104e8968f3b97102/kate-turbinska-music-lute.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6MTM6NDQuMzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--ad8e22b23284c06927ad5bc5a9d15449e15d24a1/OIP-C.jpg
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjEzOjQ0LjMxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32ba9c201b5fe267137aeda0104e8968f3b97102/kate-turbinska-music-lute.jpg
+Completed 302 Found in 22ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Completed 302 Found in 22ms (ActiveRecord: 6.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6MTM6NDQuMzA4WiIsInB1ciI6ImJsb2Jfa2V5In19--ad8e22b23284c06927ad5bc5a9d15449e15d24a1/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 21:08:44 +0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjEzOjQ0LjMxMVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--32ba9c201b5fe267137aeda0104e8968f3b97102/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 21:08:44 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:08:44 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2024-12-13 21:08:50 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-12-13 21:08:55 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-12-13 21:09:17 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 17.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.2ms)
+Completed 200 OK in 44ms (Views: 24.4ms | ActiveRecord: 0.7ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:09:17 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-13 21:09:21 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-12-13 21:09:22 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | GC: 4.6ms)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 4.6ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-12-13 21:09:23 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | GC: 0.6ms)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-12-13 21:09:24 +0800
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/devise-4.9.4/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-12-13 21:10:52 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::PasswordsController#new as HTML
+Started GET "/users/" for 127.0.0.1 at 2024-12-13 21:10:52 +0800
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 17.9ms | GC: 0.0ms)
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+  Rendered layout layouts/application.html.erb (Duration: 204.1ms | GC: 31.7ms)
+Completed 200 OK in 262ms (Views: 213.9ms | ActiveRecord: 1.9ms (0 queries, 0 cached) | GC: 33.3ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-13 21:11:37 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:11:37 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDeliveryAddresses (20241213131743)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "delivery_addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "phone" varchar, "postal_code" varchar, "address" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_42675d2d6f"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_delivery_addresses_on_user_id" ON "delivery_addresses" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241213131743') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddReceiverNameToDeliveryAddresses (20241213133147)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "delivery_addresses" ADD "receiver_name" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241213133147') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-12-13 21:35:28 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 21:35:35 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (13.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (1.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.4ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 122.6ms | GC: 0.0ms)
+  [1m[36mCACHE Color Load (0.3ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.2ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 37.4ms | GC: 16.0ms)
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mCACHE Design Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 3], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 32.9ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 239.8ms | GC: 16.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 366.1ms | GC: 35.8ms)
+Completed 200 OK in 402ms (Views: 345.5ms | ActiveRecord: 22.8ms (18 queries, 4 cached) | GC: 35.8ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 21:35:35 +0800
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 21:35:35 +0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71", "filename"=>"OIP-C"}
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8", "filename"=>"kate-turbinska-music-lute"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: 4x1qa3v6tckc0ztl7ymswdcms2uh (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6NDA6MzUuOTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--5606a01613ec2b02f9a020a88632d8a52ae057c4/OIP-C.jpg)[0m
+  [1m[36mActiveStorage::Blob Load (4.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6NDA6MzUuOTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--5606a01613ec2b02f9a020a88632d8a52ae057c4/OIP-C.jpg
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: lj2umgonmxdhe82nwuhtnx4wtpo2 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjQwOjM1Ljk1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d7b32649a9111da71e38b5f91e457ea069b95306/kate-turbinska-music-lute.jpg)[0m
+Completed 302 Found in 23ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjQwOjM1Ljk1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d7b32649a9111da71e38b5f91e457ea069b95306/kate-turbinska-music-lute.jpg
+Completed 302 Found in 28ms (ActiveRecord: 4.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTM6NDA6MzUuOTQ5WiIsInB1ciI6ImJsb2Jfa2V5In19--5606a01613ec2b02f9a020a88632d8a52ae057c4/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 21:35:35 +0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEzOjQwOjM1Ljk1OFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--d7b32649a9111da71e38b5f91e457ea069b95306/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 21:35:35 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Completed 200 OK in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:35:36 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "//delivery_addresses" for 127.0.0.1 at 2024-12-13 21:36:22 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DeliveryAddressesController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-12-13 21:36:23 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 140.7ms | GC: 21.0ms)
+Completed 200 OK in 167ms (Views: 148.0ms | ActiveRecord: 1.5ms (0 queries, 0 cached) | GC: 21.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:36:23 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-12-13 21:36:26 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "//delivery_addresses" for 127.0.0.1 at 2024-12-13 21:36:28 +0800
+Processing by DeliveryAddressesController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-12-13 21:36:28 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.1ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | GC: 0.6ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:36:28 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users//delivery_addresses" for 127.0.0.1 at 2024-12-13 21:36:41 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users/delivery_addresses"):
+  
+Started GET "/users" for 127.0.0.1 at 2024-12-13 21:36:49 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2024-12-13 21:36:49 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "//delivery_addresses" for 127.0.0.1 at 2024-12-13 21:36:50 +0800
+Processing by DeliveryAddressesController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-12-13 21:36:50 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.2ms)
+Completed 200 OK in 12ms (Views: 6.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 21:36:50 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-12-13 21:36:52 +0800
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-12-13 21:37:07 +0800
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (5.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "role") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-12-13 13:37:07.897013"], ["updated_at", "2024-12-13 13:37:07.897013"], ["role", "user"]]
+  [1m[36mTRANSACTION (14.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/delivery_addresses
+Completed 303 See Other in 235ms (ActiveRecord: 22.1ms (2 queries, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:07 +0800
+Processing by DeliveryAddressesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/index.html.erb within layouts/application
+  [1m[36mDeliveryAddress Load (0.1ms)[0m  [1m[34mSELECT "delivery_addresses".* FROM "delivery_addresses" WHERE "delivery_addresses"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/delivery_addresses/index.html.erb:5
+  Rendered delivery_addresses/index.html.erb within layouts/application (Duration: 12.1ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | GC: 0.1ms)
+Completed 200 OK in 33ms (Views: 15.9ms | ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/delivery_addresses/new" for 127.0.0.1 at 2024-12-13 21:37:18 +0800
+Processing by DeliveryAddressesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 8.8ms | GC: 0.0ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 12.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:28 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 12.1ms | GC: 4.9ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 12.5ms | GC: 4.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 5.3ms)
+Completed 200 OK in 28ms (Views: 14.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 5.3ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:29 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 7.6ms | GC: 0.6ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 7.9ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.6ms)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:30 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 7.4ms | GC: 0.0ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 7.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:30 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 4.6ms | GC: 0.4ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 4.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | GC: 0.6ms)
+Completed 200 OK in 15ms (Views: 6.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:31 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 6.2ms | GC: 0.4ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 7.3ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | GC: 0.4ms)
+Completed 200 OK in 25ms (Views: 11.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:37:31 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 9.5ms | GC: 5.4ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 9.8ms | GC: 5.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | GC: 5.4ms)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 5.4ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:38:52 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 9.5ms | GC: 0.3ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 10.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | GC: 5.0ms)
+Completed 200 OK in 71ms (Views: 26.7ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 5.5ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:38:53 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 9.9ms | GC: 7.0ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 11.5ms | GC: 7.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | GC: 11.4ms)
+Completed 200 OK in 26ms (Views: 17.8ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 11.4ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:38:54 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 2.6ms | GC: 0.4ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.4ms)
+Completed 200 OK in 44ms (Views: 7.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 25.1ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:38:54 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 4.9ms | GC: 0.2ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.6ms)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:39:11 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 6.3ms | GC: 0.4ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 7.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 1.2ms)
+Completed 200 OK in 54ms (Views: 22.4ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 5.1ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:39:47 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 9.5ms | GC: 0.0ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 11.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | GC: 6.8ms)
+Completed 200 OK in 72ms (Views: 35.2ms | ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 6.8ms)
+
+
+Started POST "/delivery_addresses" for 127.0.0.1 at 2024-12-13 21:39:48 +0800
+Processing by DeliveryAddressesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "delivery_address"=>{"receiver_name"=>"匡亦煊", "phone"=>"", "postal_code"=>"", "address"=>""}, "commit"=>"Create Delivery address"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering delivery_addresses/new.html.erb within layouts/application
+  Rendered delivery_addresses/_form.html.erb (Duration: 3.3ms | GC: 0.3ms)
+  Rendered delivery_addresses/new.html.erb within layouts/application (Duration: 3.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | GC: 0.3ms)
+Completed 200 OK in 17ms (Views: 7.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
