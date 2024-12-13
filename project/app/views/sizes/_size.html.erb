@@ -1,0 +1,11 @@
+<div id="<%= dom_id size %>">
+  <p>
+    <strong>Name:</strong>
+    <%= size.name %>
+  </p>
+
+  <p>
+    <b>Products of this size:</b>
+    <%= (size.products.collect { |product| product.name }).join(", ") %>
+  </p>
+</div>

@@ -1,0 +1,11 @@
+<div id="<%= dom_id design %>">
+  <p>
+    <strong>Name:</strong>
+    <%= design.name %>
+  </p>
+
+  <p>
+    <b>Products of this design:</b>
+    <%= (design.products.collect { |product| product.name }).join(", ") %>
+  </p>
+</div>

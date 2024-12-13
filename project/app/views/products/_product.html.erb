@@ -1,0 +1,41 @@
+<div id="<%= dom_id product %>">
+  <p>
+    <strong>Name:</strong>
+    <%= product.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= product.description %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= product.price %>
+  </p>
+
+  <p>
+    <strong>Sales:</strong>
+    <%= product.sales %>
+  </p>
+
+  <p>
+    <strong>Color:</strong>
+    <%= "#{product.color.name} (RGB:#{product.color.code} 透明度:#{product.color.opacity})"%>
+  </p>
+
+  <p>
+    <strong>Type:</strong>
+    <%= "#{product.type.name} (稀有度: #{product.type.rarity})" %>
+  </p>
+
+  <p>
+    <strong>大小</strong>
+    <%= product.size.name %>
+  </p>
+
+  <p>
+    <strong>款式</strong>
+    <%= product.design.name %>
+  </p>
+</div>

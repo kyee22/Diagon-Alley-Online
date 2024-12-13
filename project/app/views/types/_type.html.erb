@@ -1,0 +1,16 @@
+<div id="<%= dom_id type %>">
+  <p>
+    <strong>Name:</strong>
+    <%= type.name %>
+  </p>
+
+  <p>
+    <strong>Rarity:</strong>
+    <%= type.rarity %>
+  </p>
+
+  <p>
+    <b>Products of this type:</b>
+    <%= (type.products.collect { |product| product.name }).join(", ") %>
+  </p>
+</div>

@@ -1,0 +1,21 @@
+<div id="<%= dom_id color %>">
+  <p>
+    <strong>Name:</strong>
+    <%= color.name %>
+  </p>
+
+  <p>
+    <strong>Code:</strong>
+    <%= color.code %>
+  </p>
+
+  <p>
+    <strong>Opacity:</strong>
+    <%= color.opacity %>
+  </p>
+
+  <p>
+    <b>Products of this color:</b>
+    <%= (color.products.collect { |product| product.name }).join(", ") %>
+  </p>
+</div>
