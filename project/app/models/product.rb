@@ -15,4 +15,6 @@ class Product < ApplicationRecord
   belongs_to :design
   belongs_to :size
   belongs_to :type
+
+  has_one_attached :image, dependent: :destory
 end

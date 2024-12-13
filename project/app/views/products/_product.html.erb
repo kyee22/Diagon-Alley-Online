@@ -38,4 +38,10 @@
     <strong>款式</strong>
     <%= product.design.name %>
   </p>
+
+  <% if product.image.attached? %>
+    <%= image_tag product.image %>
+  <% else %>
+    <p>暂无图片</p>
+  <% end %>
 </div>

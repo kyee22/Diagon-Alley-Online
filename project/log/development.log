@@ -1721,3 +1721,927 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/products/new" for 127.0.0.1 at 2024-12-13 20:45:03 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20241213123942_create_active_storage_tables.active_storage.rb
+
+
+):
+  
+activerecord (7.2.2) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20241213123942)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241213123942') RETURNING "version"[0m
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/new" for 127.0.0.1 at 2024-12-13 20:45:25 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mColor Load (0.3ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/products/_form.html.erb:34
+  [1m[36mType Load (1.2ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  ↳ app/views/products/_form.html.erb:35
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/products/_form.html.erb:37
+  Rendered products/_form.html.erb (Duration: 99.3ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 101.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 229.6ms | GC: 17.6ms)
+Completed 200 OK in 308ms (Views: 225.3ms | ActiveRecord: 9.7ms (4 queries, 0 cached) | GC: 17.6ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:45:25 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:45:29 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 39.6ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 52.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 55.4ms | GC: 0.0ms)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.8ms (6 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2024-12-13 20:45:33 +0800
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.3ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 25.3ms | GC: 0.4ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 30.2ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | GC: 0.4ms)
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.7ms (6 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2024-12-13 20:45:33 +0800
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 16.0ms | GC: 0.5ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 17.2ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | GC: 0.5ms)
+Completed 200 OK in 22ms (Views: 19.3ms | ActiveRecord: 0.6ms (6 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2024-12-13 20:45:34 +0800
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 36.3ms | GC: 0.3ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 37.4ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | GC: 3.7ms)
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.4ms (6 queries, 0 cached) | GC: 3.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:45:38 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.2ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  Rendered products/_product.html.erb (Duration: 38.6ms | GC: 15.1ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 56.7ms | GC: 23.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | GC: 25.0ms)
+Completed 200 OK in 76ms (Views: 60.1ms | ActiveRecord: 4.7ms (6 queries, 0 cached) | GC: 27.7ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2024-12-13 20:45:39 +0800
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/products/_form.html.erb:34
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  ↳ app/views/products/_form.html.erb:35
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/products/_form.html.erb:37
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_form.html.erb:41
+  Rendered products/_form.html.erb (Duration: 39.8ms | GC: 10.1ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 42.1ms | GC: 11.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | GC: 11.0ms)
+Completed 200 OK in 56ms (Views: 45.2ms | ActiveRecord: 0.4ms (6 queries, 0 cached) | GC: 17.9ms)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2024-12-13 20:45:54 +0800
+Processing by ProductsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"测试扫帚", "description"=>"AAAAAAAA", "price"=>"29.2", "sales"=>"0", "color_id"=>"2", "type_id"=>"1", "size_id"=>"1", "design_id"=>"1", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb07b6925e8 @tempfile=#<Tempfile:/tmp/RackMultipart20241213-240994-rnxynl.jpg>, @content_type="image/jpeg", @original_filename="OIP-C.jpg", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"OIP-C.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? AND "products"."id" != ? LIMIT ?[0m  [["name", "测试扫帚"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "4x1qa3v6tckc0ztl7ymswdcms2uh"], ["filename", "OIP-C.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 9314], ["checksum", "F9yIpKQKl1gMwet5V4DQDQ=="], ["created_at", "2024-12-13 12:45:54.237685"]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "Product"], ["record_id", 1], ["blob_id", 1], ["created_at", "2024-12-13 12:45:54.246059"]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = ? WHERE "products"."id" = ?[0m  [["updated_at", "2024-12-13 12:45:54.251481"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:40:in `block in update'
+[36m  Disk Storage (1.2ms) [0m[32mUploaded file to key: 4x1qa3v6tckc0ztl7ymswdcms2uh (checksum: F9yIpKQKl1gMwet5V4DQDQ==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4) to Async(default) with arguments: #<GlobalID:0x00007fb07b681720 @uri=#<URI::GID gid://project/ActiveStorage::Blob/1>>
+[ActiveJob] ↳ app/controllers/products_controller.rb:40:in `block in update'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 165ms (ActiveRecord: 9.9ms (7 queries, 0 cached) | GC: 1.3ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4] Performing ActiveStorage::AnalyzeJob (Job ID: 9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4) from Async(default) enqueued at 2024-12-13T12:45:54.300288498Z with arguments: #<GlobalID:0x00007fb0890587c8 @uri=#<URI::GID gid://project/ActiveStorage::Blob/1>>
+Started GET "/products/1" for 127.0.0.1 at 2024-12-13 20:45:54 +0800
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mActiveStorage::Blob Update (1.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = ? WHERE "products"."id" = ?[0m  [["updated_at", "2024-12-13 12:45:54.400512"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4] Performed ActiveStorage::AnalyzeJob (Job ID: 9fd2e04a-ea8a-48c2-97c1-b3da2eecb0b4) from Async(default) in 91.91ms
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 23.8ms | GC: 1.4ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 25.4ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | GC: 1.7ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.5ms (7 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:45:54 +0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71", "filename"=>"OIP-C"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.4ms) [0m[34mGenerated URL for file at key: 4x1qa3v6tckc0ztl7ymswdcms2uh (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTA6NTQuNTIxWiIsInB1ciI6ImJsb2Jfa2V5In19--25538823d67c7e332e0066e52004b953945ee7f7/OIP-C.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTA6NTQuNTIxWiIsInB1ciI6ImJsb2Jfa2V5In19--25538823d67c7e332e0066e52004b953945ee7f7/OIP-C.jpg
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTA6NTQuNTIxWiIsInB1ciI6ImJsb2Jfa2V5In19--25538823d67c7e332e0066e52004b953945ee7f7/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:45:54 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:45:56 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 16.7ms | GC: 8.5ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 20.1ms | GC: 8.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | GC: 8.5ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms (7 queries, 0 cached) | GC: 8.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:46:17 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 8.9ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 13.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | GC: 0.4ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.6ms (7 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:46:18 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 11.6ms | GC: 0.6ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 15.7ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | GC: 0.6ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.4ms (7 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-12-13 20:46:20 +0800
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/products/_form.html.erb:34
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  ↳ app/views/products/_form.html.erb:35
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/products/_form.html.erb:37
+  Rendered products/_form.html.erb (Duration: 17.5ms | GC: 0.0ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 18.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2024-12-13 20:50:15 +0800
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"魔鬼匹配", "description"=>"很厉害", "price"=>"10000", "sales"=>"0", "color_id"=>"2", "type_id"=>"2", "size_id"=>"1", "design_id"=>"2", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb07b700610 @tempfile=#<Tempfile:/tmp/RackMultipart20241213-240994-vytyvt.jpg>, @content_type="image/jpeg", @original_filename="kate-turbinska-music-lute.jpg", @headers="Content-Disposition: form-data; name=\"product[image]\"; filename=\"kate-turbinska-music-lute.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "魔鬼匹配"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "sales", "created_at", "updated_at", "color_id", "type_id", "size_id", "design_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "魔鬼匹配"], ["description", "很厉害"], ["price", 10000.0], ["sales", 0], ["created_at", "2024-12-13 12:50:15.429476"], ["updated_at", "2024-12-13 12:50:15.429476"], ["color_id", 2], ["type_id", 2], ["size_id", 1], ["design_id", 2]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["key", "lj2umgonmxdhe82nwuhtnx4wtpo2"], ["filename", "kate-turbinska-music-lute.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 304970], ["checksum", "6sjK6diHWeTiDFD7bjSTbA=="], ["created_at", "2024-12-13 12:50:15.452656"]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "image"], ["record_type", "Product"], ["record_id", 2], ["blob_id", 2], ["created_at", "2024-12-13 12:50:15.456300"]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = ? WHERE "products"."id" = ?[0m  [["updated_at", "2024-12-13 12:50:15.458741"], ["id", 2]]
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:27:in `block in create'
+[36m  Disk Storage (1.1ms) [0m[32mUploaded file to key: lj2umgonmxdhe82nwuhtnx4wtpo2 (checksum: 6sjK6diHWeTiDFD7bjSTbA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 21d98411-0e39-4d7a-ab81-bdaac1ac2600) to Async(default) with arguments: #<GlobalID:0x00007fb088012be8 @uri=#<URI::GID gid://project/ActiveStorage::Blob/2>>
+[ActiveJob] ↳ app/controllers/products_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/products/2
+Completed 302 Found in 70ms (ActiveRecord: 2.3ms (11 queries, 0 cached) | GC: 11.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600] Performing ActiveStorage::AnalyzeJob (Job ID: 21d98411-0e39-4d7a-ab81-bdaac1ac2600) from Async(default) enqueued at 2024-12-13T12:50:15.464973552Z with arguments: #<GlobalID:0x00007fb07b84c280 @uri=#<URI::GID gid://project/ActiveStorage::Blob/2>>
+Started GET "/products/2" for 127.0.0.1 at 2024-12-13 20:50:15 +0800
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ?[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ?[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = ? WHERE "products"."id" = ?[0m  [["updated_at", "2024-12-13 12:50:15.514289"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [21d98411-0e39-4d7a-ab81-bdaac1ac2600] Performed ActiveStorage::AnalyzeJob (Job ID: 21d98411-0e39-4d7a-ab81-bdaac1ac2600) from Async(default) in 44.53ms
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.2ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 12.9ms | GC: 7.2ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 18.7ms | GC: 7.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | GC: 7.2ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.5ms (7 queries, 0 cached) | GC: 7.2ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:50:15 +0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MiwicHVyIjoiYmxvYl9pZCJ9fQ==--fc8ccb186152e029b5b8c8dbab43adbe28d879c8", "filename"=>"kate-turbinska-music-lute"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: lj2umgonmxdhe82nwuhtnx4wtpo2 (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEyOjU1OjE1LjU2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2c3ce9faa6c80118b873d23853d530d5efc5ee6f/kate-turbinska-music-lute.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEyOjU1OjE1LjU2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2c3ce9faa6c80118b873d23853d530d5efc5ee6f/kate-turbinska-music-lute.jpg
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEyOjU1OjE1LjU2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2c3ce9faa6c80118b873d23853d530d5efc5ee6f/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:50:15 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:50:20 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  [1m[36mCACHE Color Load (0.4ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 5.9ms | GC: 0.3ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 14.8ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | GC: 0.6ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.6ms (13 queries, 2 cached) | GC: 0.6ms)
+
+
+Started GET "/designs" for 127.0.0.1 at 2024-12-13 20:50:38 +0800
+Processing by DesignsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering designs/index.html.erb within layouts/application
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/designs/index.html.erb:8
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."design_id" = ?[0m  [["design_id", 1]]
+  ↳ app/views/designs/_design.html.erb:9:in `collect'
+  Rendered designs/_design.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."design_id" = ?[0m  [["design_id", 2]]
+  ↳ app/views/designs/_design.html.erb:9:in `collect'
+  Rendered designs/_design.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered designs/index.html.erb within layouts/application (Duration: 15.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 20.7ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:50:38 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/designs/1" for 127.0.0.1 at 2024-12-13 20:50:45 +0800
+Processing by DesignsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/designs_controller.rb:63:in `set_design'
+  Rendering layout layouts/application.html.erb
+  Rendering designs/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."design_id" = ?[0m  [["design_id", 1]]
+  ↳ app/views/designs/_design.html.erb:9:in `collect'
+  Rendered designs/_design.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered designs/show.html.erb within layouts/application (Duration: 5.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | GC: 0.5ms)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2024-12-13 20:50:49 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/arren22/.rvm/gems/ruby-3.3.5/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/arren22/.rvm/gems/ruby-3.3.5/gems/railties-7.2.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.1ms | GC: 0.3ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-12-13 20:50:52 +0800
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/products/_form.html.erb:34
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types"[0m
+  ↳ app/views/products/_form.html.erb:35
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes"[0m
+  ↳ app/views/products/_form.html.erb:36
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs"[0m
+  ↳ app/views/products/_form.html.erb:37
+  Rendered products/_form.html.erb (Duration: 12.3ms | GC: 0.1ms)
+  Rendered products/new.html.erb within layouts/application (Duration: 12.5ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 0.1ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.2ms (4 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:50:52 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/" for 127.0.0.1 at 2024-12-13 20:50:55 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  [1m[36mCACHE Color Load (0.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 5.7ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 11.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.3ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.5ms (13 queries, 2 cached) | GC: 0.3ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:50:55 +0800
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--eb9f8020c6f532f0faf71ba2d4ba0c57c7dfee71", "filename"=>"OIP-C"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEyOjU1OjE1LjU2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2c3ce9faa6c80118b873d23853d530d5efc5ee6f/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:50:55 +0800
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: 4x1qa3v6tckc0ztl7ymswdcms2uh (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTU6NTUuMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--67d00481ea133b7a432b35102c6223730fe760a2/OIP-C.jpg)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTU6NTUuMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--67d00481ea133b7a432b35102c6223730fe760a2/OIP-C.jpg
+Completed 302 Found in 11ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.2ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTU6NTUuMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--67d00481ea133b7a432b35102c6223730fe760a2/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:50:55 +0800
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Completed 304 Not Modified in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:50:55 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:51:01 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 6.9ms | GC: 0.3ms)
+  [1m[36mCACHE Color Load (0.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 14.2ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | GC: 0.8ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.8ms (13 queries, 2 cached) | GC: 0.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTU6NTUuMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--67d00481ea133b7a432b35102c6223730fe760a2/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:51:02 +0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEyOjU1OjE1LjU2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2c3ce9faa6c80118b873d23853d530d5efc5ee6f/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:51:02 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Processing by ActiveStorage::DiskController#show as JPEG
+Completed 304 Not Modified in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 304 Not Modified in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/colors" for 127.0.0.1 at 2024-12-13 20:51:03 +0800
+Processing by ColorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering colors/index.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors"[0m
+  ↳ app/views/colors/index.html.erb:8
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."color_id" = ?[0m  [["color_id", 1]]
+  ↳ app/views/colors/_color.html.erb:19:in `collect'
+  Rendered colors/_color.html.erb (Duration: 6.4ms | GC: 0.0ms)
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."color_id" = ?[0m  [["color_id", 2]]
+  ↳ app/views/colors/_color.html.erb:19:in `collect'
+  Rendered colors/_color.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered colors/index.html.erb within layouts/application (Duration: 13.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:51:03 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/colors/2" for 127.0.0.1 at 2024-12-13 20:51:06 +0800
+Processing by ColorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/colors_controller.rb:63:in `set_color'
+  Rendering layout layouts/application.html.erb
+  Rendering colors/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."color_id" = ?[0m  [["color_id", 2]]
+  ↳ app/views/colors/_color.html.erb:19:in `collect'
+  Rendered colors/_color.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered colors/show.html.erb within layouts/application (Duration: 6.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | GC: 0.6ms)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/colors/2" for 127.0.0.1 at 2024-12-13 20:51:06 +0800
+Processing by ColorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/colors_controller.rb:63:in `set_color'
+  Rendering layout layouts/application.html.erb
+  Rendering colors/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."color_id" = ?[0m  [["color_id", 2]]
+  ↳ app/views/colors/_color.html.erb:19:in `collect'
+  Rendered colors/_color.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered colors/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/colors/new" for 127.0.0.1 at 2024-12-13 20:51:08 +0800
+Processing by ColorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering colors/new.html.erb within layouts/application
+  Rendered colors/_form.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered colors/new.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.1ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/colors/new" for 127.0.0.1 at 2024-12-13 20:51:09 +0800
+Processing by ColorsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering colors/new.html.erb within layouts/application
+  Rendered colors/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered colors/new.html.erb within layouts/application (Duration: 1.4ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | GC: 0.1ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/colors/1" for 127.0.0.1 at 2024-12-13 20:51:09 +0800
+Processing by ColorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/colors_controller.rb:63:in `set_color'
+  Rendering layout layouts/application.html.erb
+  Rendering colors/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."color_id" = ?[0m  [["color_id", 1]]
+  ↳ app/views/colors/_color.html.erb:19:in `collect'
+  Rendered colors/_color.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered colors/show.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/colors/1" for 127.0.0.1 at 2024-12-13 20:51:10 +0800
+Processing by ColorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/colors_controller.rb:63:in `set_color'
+  Rendering layout layouts/application.html.erb
+  Rendering colors/show.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."color_id" = ?[0m  [["color_id", 1]]
+  ↳ app/views/colors/_color.html.erb:19:in `collect'
+  Rendered colors/_color.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered colors/show.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2024-12-13 20:51:13 +0800
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.0ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 8.4ms | GC: 3.1ms)
+  [1m[36mCACHE Color Load (0.0ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mCACHE Size Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 2], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 5.0ms | GC: 0.4ms)
+  Rendered products/index.html.erb within layouts/application (Duration: 18.1ms | GC: 3.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | GC: 3.5ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.5ms (13 queries, 2 cached) | GC: 3.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI0eDFxYTN2NnRja2MwenRsN3ltc3dkY21zMnVoIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiT0lQLUMuanBnXCI7IGZpbGVuYW1lKj1VVEYtOCcnT0lQLUMuanBnIiwiY29udGVudF90eXBlIjoiaW1hZ2UvanBlZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjQtMTItMTNUMTI6NTU6NTUuMjI5WiIsInB1ciI6ImJsb2Jfa2V5In19--67d00481ea133b7a432b35102c6223730fe760a2/OIP-C.jpg" for 127.0.0.1 at 2024-12-13 20:51:13 +0800
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJsajJ1bWdvbm14ZGhlODJud3VodG54NHd0cG8yIiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwia2F0ZS10dXJiaW5za2EtbXVzaWMtbHV0ZS5qcGdcIjsgZmlsZW5hbWUqPVVURi04JydrYXRlLXR1cmJpbnNrYS1tdXNpYy1sdXRlLmpwZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL2pwZWciLCJzZXJ2aWNlX25hbWUiOiJsb2NhbCJ9LCJleHAiOiIyMDI0LTEyLTEzVDEyOjU1OjE1LjU2OVoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--2c3ce9faa6c80118b873d23853d530d5efc5ee6f/kate-turbinska-music-lute.jpg" for 127.0.0.1 at 2024-12-13 20:51:13 +0800
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"kate-turbinska-music-lute"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"OIP-C"}
+Completed 304 Not Modified in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Completed 304 Not Modified in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/manifest.json" for 127.0.0.1 at 2024-12-13 20:51:13 +0800
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2024-12-13 20:51:19 +0800
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.0ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.0ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 5.4ms | GC: 0.5ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 12.8ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.5ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 0.4ms (7 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2024-12-13 20:51:22 +0800
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:63:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  [1m[36mColor Load (0.1ms)[0m  [1m[34mSELECT "colors".* FROM "colors" WHERE "colors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:24
+  [1m[36mType Load (0.1ms)[0m  [1m[34mSELECT "types".* FROM "types" WHERE "types"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:29
+  [1m[36mSize Load (0.1ms)[0m  [1m[34mSELECT "sizes".* FROM "sizes" WHERE "sizes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:34
+  [1m[36mDesign Load (0.1ms)[0m  [1m[34mSELECT "designs".* FROM "designs" WHERE "designs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:39
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Product"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:42
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:43
+  Rendered products/_product.html.erb (Duration: 8.5ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.6ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
