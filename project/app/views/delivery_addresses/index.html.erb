@@ -1,15 +1,18 @@
 <h2>我的送货地址</h2>
 <%= link_to '添加新送货地址', new_delivery_address_path %>
+<%= button_to '登出', destroy_user_session_path, method: :delete %>
 
 <ul>
   <% current_user.delivery_addresses.each do |delivery_address| %>
     <li>
-      <p><strong>收货人姓名：</strong><%= address.receiver_name %></p>
+      <p><strong>收货人姓名：</strong><%= delivery_address.receiver_name %></p>
       <p><strong>电话:</strong> <%= delivery_address.phone %></p>
       <p><strong>邮政编码:</strong> <%= delivery_address.postal_code %></p>
       <p><strong>地址:</strong> <%= delivery_address.address %></p>
       <%= link_to '编辑', edit_delivery_address_path(delivery_address) %> |
-      <%= link_to '删除', delivery_address, method: :delete, data: { confirm: '你确定要删除这个送货地址吗?' } %>
+      <%= link_to "删除", delivery_address,
+                  data: {turbo_method: :delete, turbo_confirm: "你确定要删除这个送货地址吗?"},
+                  class: "btn btn-outline-danger btn-sm" %>
     </li>
   <% end %>
 </ul>

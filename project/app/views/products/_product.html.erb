@@ -44,4 +44,10 @@
   <% else %>
     <p>暂无图片😰</p>
   <% end %>
+  <br/>
+  <% if current_user.favorite_products.include?(product) %>
+    <%= button_to '从收藏夹移除', unfavorite_product_favorite_path(product), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= button_to '添加到收藏夹', favorite_product_favorite_path(product), method: :post, class: 'btn btn-primary' %>
+  <% end %>
 </div>

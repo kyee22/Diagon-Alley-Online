@@ -1,0 +1,13 @@
+<h2>我的收藏夹</h2>
+
+<ul>
+  <% @favorite_products.each do |product| %>
+    <li>
+      <%= product.name %> - <%= product.price %> 魔法币
+      <%= link_to '查看', product_path(product) %> |
+      <%= link_to '从收藏夹移除', unfavorite_product_favorite_path(product),
+                  method: :delete,
+                  data: { turbo_method: :delete, turbo_confirm: "你确定要从收藏夹移除这个产品吗?" } %>
+    </li>
+  <% end %>
+</ul>

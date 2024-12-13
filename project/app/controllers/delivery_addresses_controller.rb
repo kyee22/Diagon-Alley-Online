@@ -13,12 +13,14 @@ class DeliveryAddressesController < ApplicationController
   # 创建收货地址
   def create
     @delivery_address = current_user.delivery_addresses.build(delivery_address_params)
-    if @delivery_address.save
-      format.html { redirect_to delivery_addresses_path, notice: "送货地址添加成功！" }
-      format.json { render :show, status: :created, location: @delivery_address }
-    else
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @delivery_address.save
+        format.html { redirect_to delivery_addresses_path, notice: "送货地址添加成功！" }
+        format.json { render :show, status: :created, location: @delivery_address }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -30,13 +32,14 @@ class DeliveryAddressesController < ApplicationController
   # 更新送货地址
   def update
     @delivery_address = current_user.delivery_addresses.find(params[:id])
-    if @delivery_address.update(delivery_address_params)
-      format.html { redirect_to delivery_addresses_path, notice: "送货地址更新成功！" }
-      format.json { render :show, status: :ok, location: @delivery_address }
-    else
-      render :edit
-      format.html { render :edit, status: :unprocessable_entity }
-      format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @delivery_address.update(delivery_address_params)
+        format.html { redirect_to delivery_addresses_path, notice: "送货地址更新成功！" }
+        format.json { render :show, status: :ok, location: @delivery_address }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -44,7 +47,6 @@ class DeliveryAddressesController < ApplicationController
   def destroy
     @delivery_address = current_user.delivery_addresses.find(params[:id])
     @delivery_address.destroy
-    # redirect_to @delivery_addresses, notice: '！'
 
     respond_to do |format|
       format.html { redirect_to delivery_addresses_path, status: :see_other, notice: "送货地址删除成功" }

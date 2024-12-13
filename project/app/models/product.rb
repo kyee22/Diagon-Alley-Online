@@ -17,4 +17,13 @@ class Product < ApplicationRecord
   belongs_to :type
 
   has_one_attached :image, dependent: :destory
+
+  #################### 用户 --> 收藏夹 <-- 产品 ####################
+  # 产品和收藏夹是多对多关系
+  has_many :favorites
+  has_many :users, through: :favorites
+
+  #################### 用户 --> 购物车 <-- 产品 ####################
+  has_many :cart_items
+  has_many :users, through: :cart_items
 end

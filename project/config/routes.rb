@@ -3,7 +3,18 @@ Rails.application.routes.draw do
   devise_for :users
   resources :delivery_addresses, only: [:new, :create, :edit, :update, :destroy, :index]
 
-  resources :products
+  resources :products do
+    resource :favorite, only: [] do
+      post 'favorite', to: 'favorites#create', as: :favorite
+      delete 'favorite', to: 'favorites#destroy', as: :unfavorite
+    end
+    resources :cart_items, only: [:create]
+  end
+  # 添加 /favorities 路由到 FavoritesController#index 动作
+  get 'favorities', to: 'favorites#index', as: :favorities
+
+  resources :cart_items, only: [:index, :destroy, :update]
+
   resources :designs
   resources :sizes
   resources :types
