@@ -1,12 +1,16 @@
-<% content_for :title, "Editing product" %>
+<% content_for :title, "编辑商品" %>
 
-<h1>Editing product</h1>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="text-center mb-4">编辑商品</h1>
 
-<%= render "form", product: @product %>
+      <%= render "form", product: @product %>
 
-<br>
-
-<div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", products_path %>
+      <div class="d-flex justify-content-between mt-4">
+        <%= link_to "查看此商品", @product, class: 'btn btn-outline-primary' %>
+        <%= link_to "返回商品列表", products_path, class: 'btn btn-outline-secondary' %>
+      </div>
+    </div>
+  </div>
 </div>

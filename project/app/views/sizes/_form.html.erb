@@ -1,22 +1,22 @@
-<%= form_with(model: size) do |form| %>
+<%= form_with(model: size, local: true) do |form| %>
   <% if size.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(size.errors.count, "error") %> prohibited this size from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">保存失败：</h4>
+      <p>共发现 <%= pluralize(size.errors.count, "个错误") %>，导致该尺寸无法保存。</p>
       <ul>
-        <% size.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% size.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, "名称", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="d-grid gap-2">
+    <%= form.submit "提交", class: "btn btn-primary" %>
   </div>
 <% end %>

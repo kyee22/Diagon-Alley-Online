@@ -1,16 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "设计列表" %>
 
-<% content_for :title, "Designs" %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- 通知信息 -->
+      <% if notice.present? %>
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
 
-<h1>Designs</h1>
+      <h1 class="mb-4">设计列表</h1>
 
-<div id="designs">
-  <% @designs.each do |design| %>
-    <%= render design %>
-    <p>
-      <%= link_to "Show this design", design %>
-    </p>
-  <% end %>
+      <div id="designs">
+        <% if @designs.any? %>
+          <% @designs.each do |design| %>
+            <%= render design %>
+          <% end %>
+        <% else %>
+          <p class="text-muted">暂无设计。</p>
+        <% end %>
+      </div>
+
+      <!-- 添加新设计按钮 -->
+      <div class="text-center mt-4">
+        <%= link_to "新建设计", new_design_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New design", new_design_path %>

@@ -1,16 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "类型列表" %>
 
-<% content_for :title, "Types" %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- 通知信息 -->
+      <% if notice.present? %>
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
 
-<h1>Types</h1>
+      <h1 class="mb-4">类型列表</h1>
 
-<div id="types">
-  <% @types.each do |type| %>
-    <%= render type %>
-    <p>
-      <%= link_to "Show this type", type %>
-    </p>
-  <% end %>
+      <div id="types">
+        <% if @types.any? %>
+          <% @types.each do |type| %>
+            <%= render type %>
+          <% end %>
+        <% else %>
+          <p class="text-muted">暂无类型。</p>
+        <% end %>
+      </div>
+
+      <!-- 添加新类型按钮 -->
+      <div class="text-center mt-4">
+        <%= link_to "新建类型", new_type_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New type", new_type_path %>

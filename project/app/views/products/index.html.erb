@@ -1,16 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<!-- 通知信息 -->
+<% if notice.present? %>
+  <div class="alert alert-success mt-4" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
-<% content_for :title, "Products" %>
+<!-- 设置页面标题 -->
+<% content_for :title, "商品列表" %>
 
-<h1>Products</h1>
+<h1 class="mb-4">商品列表</h1>
 
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
+<!-- 直接按顺序显示所有商品 -->
+<% @products.each do |product| %>
+  <%= render partial: 'products/product', locals: { product: product } %>
+<% end %>
+
 </div>
-
-<%= link_to "New product", new_product_path %>

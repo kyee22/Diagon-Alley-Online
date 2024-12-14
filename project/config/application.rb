@@ -35,5 +35,8 @@ module Project
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.time_zone = 'Beijing'  # 设置时区为中国时间
+    config.active_record.default_timezone = :local  # 确保 ActiveRecord 使用本地时区
+
   end
 end

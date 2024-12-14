@@ -1,7 +1,47 @@
+<div class="container-fluid home">
+  <!-- 蒙版层 -->
+  <div class="overlay"></div>
 
-<div class="container">
-  <p style="color: green"><%= notice %></p>
+  <div class="container text-center py-5" style="color: #fff; font-family: 'Harry Potter', sans-serif;">
 
-  <p>欢迎访问我们的在线商店！在这里你可以浏览商品、管理订单并享受更多服务。</p>
+    <!-- 魔法元素标题 -->
+    <h1 class="display-4 text-uppercase font-weight-bold mb-4"
+        style="font-family: 'Cinzel Decorative', 'ZCOOL XiaoWei', serif; color: #ffd700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">
+      对角巷 Online 🧙‍♂️
+    </h1>
 
+    <!-- 显示通知信息 -->
+    <% if notice %>
+      <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="background-color: #d4edda; border-color: #c3e6cb;">
+        <%= notice %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+
+    <!-- 欢迎信息 -->
+    <p class="lead mb-4" style="font-size: 1.25rem; color: #fff;">
+      欢迎访问我们的在线商店！在这里你可以浏览商品、管理订单并享受更多服务。
+    </p>
+
+    <!-- 更多内容 -->
+    <div class="mt-5">
+      <p class="font-italic" style="font-size: 1.1rem;">
+        让我们一起进入充满魔法和奇迹的世界，探索最新的魔法商品！<br>
+        祝你购物愉快！
+      </p>
+    </div>
+
+    <!-- 卡片组件 -->
+    <div class="card mx-auto mt-5" style="max-width: 500px; background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-radius: 10px;">
+      <div class="card-body text-center">
+        <h5 class="card-title">开始你的魔法之旅</h5>
+        <p class="card-text">立即浏览我们最新上架的商品，发现更多神奇的魔法物品。</p>
+        <a href="<%= current_user&.role === 'admin' ? '/manage_products' : '/products' %>"
+           class="btn btn-primary d-flex align-items-center justify-content-center">
+          浏览商品   <i class="fas fa-arrow-right-to-bracket"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </div>

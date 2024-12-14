@@ -1,11 +1,13 @@
-<div id="<%= dom_id design %>">
-  <p>
-    <strong>Name:</strong>
-    <%= design.name %>
-  </p>
+<!-- _design.html.erb -->
+<div class="card mb-3">
+  <div class="card-body">
+    <p class="mb-3">
+      <strong>名称：</strong>
+      <%= design.name %>
+    </p>
 
-  <p>
-    <b>Products of this design:</b>
-    <%= (design.products.collect { |product| product.name }).join(", ") %>
-  </p>
+    <p class="mt-3">
+      <%= link_to "查看该设计", design, class: "btn btn-secondary" %>
+    </p>
+  </div>
 </div>

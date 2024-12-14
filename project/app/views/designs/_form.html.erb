@@ -1,22 +1,22 @@
-<%= form_with(model: design) do |form| %>
+<%= form_with(model: design, local: true) do |form| %>
   <% if design.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(design.errors.count, "error") %> prohibited this design from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">保存失败：</h4>
+      <p>共发现 <%= pluralize(design.errors.count, "个错误") %>，导致该设计无法保存。</p>
       <ul>
-        <% design.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% design.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.label :name, "名称", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="d-grid gap-2">
+    <%= form.submit "提交", class: "btn btn-primary" %>
   </div>
 <% end %>

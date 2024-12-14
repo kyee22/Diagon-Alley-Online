@@ -7,9 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-admin = User.find_or_create_by(email: 'admin@buaa.edu.cn') do |user|
+admin1 = User.find_or_create_by(email: 'admin@buaa.edu.cn') do |user|
   user.password = '123456'              # 密码
   user.password_confirmation = '123456' # 确认密码
   user.role = 'admin'                         # 角色为管理员
 end
+
+admin2 = User.find_or_create_by(email: 'super@buaa.edu.cn') do |user|
+  user.password = '789456132'              # 密码
+  user.password_confirmation = '789456132' # 确认密码
+  user.role = 'admin'                         # 角色为管理员
+end
+
 

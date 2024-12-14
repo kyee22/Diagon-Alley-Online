@@ -1,12 +1,19 @@
-<% content_for :title, "Editing color" %>
+<% content_for :title, "编辑颜色" %>
 
-<h1>Editing color</h1>
-
-<%= render "form", color: @color %>
-
-<br>
-
-<div>
-  <%= link_to "Show this color", @color %> |
-  <%= link_to "Back to colors", colors_path %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>编辑颜色</h4>
+        </div>
+        <div class="card-body">
+          <%= render "form", color: @color %>
+        </div>
+        <div class="card-footer text-center">
+          <%= link_to "返回颜色列表", colors_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

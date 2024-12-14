@@ -1,12 +1,20 @@
-<% content_for :title, "Editing type" %>
+<% content_for :title, "编辑类型" %>
 
-<h1>Editing type</h1>
-
-<%= render "form", type: @type %>
-
-<br>
-
-<div>
-  <%= link_to "Show this type", @type %> |
-  <%= link_to "Back to types", types_path %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>编辑类型</h4>
+        </div>
+        <div class="card-body">
+          <%= render "form", type: @type %>
+        </div>
+        <div class="card-footer text-center">
+          <a href="<%= type_path(@type) %>" class="btn btn-secondary me-2">查看该类型</a>
+          <a href="<%= types_path %>" class="btn btn-secondary">返回类型列表</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -41,7 +41,7 @@ class CartItemsController < ApplicationController
 
     respond_to do |format|
       if @cart_item.update(cart_item_params)
-        format.html { redirect_to cart_item_params, notice: "购物车已更新！" }
+        format.html { redirect_to cart_items_path, notice: "购物车已更新！" }
         format.json { render :show, status: :ok, location: @cart_item }
       else
         format.html { render :edit, status: :unprocessable_entity }

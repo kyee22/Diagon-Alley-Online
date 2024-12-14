@@ -1,0 +1,54 @@
+.home {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative; /* 确保蒙版可以覆盖在这个容器内 */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 垂直居中对齐内容 */
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 黑色透明蒙版，调整透明度 */
+    z-index: 1; /* 确保蒙版在背景图片之上，内容在蒙版之上 */
+  }
+
+  .container {
+    z-index: 2; /* 确保内容显示在蒙版之上 */
+  }
+
+  /* 对通知的样式进行魔法主题美化 */
+  .alert-custom {
+    background: linear-gradient(135deg, #f39c12, #8e44ad);  /* 渐变背景色 */
+    color: white;
+    font-family: 'Cinzel Decorative', serif;
+    border: 2px solid #f39c12;  /* 边框使用魔法金色 */
+    border-radius: 10px;  /* 圆角边框 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 文本阴影 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 提升效果的阴影 */
+  }
+
+  .alert-custom .alert-heading {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  .alert-custom p {
+    font-size: 1.25rem;
+  }
+
+  /* 响应式调整，确保在不同设备上的显示效果 */
+  @media (max-width: 768px) {
+    .alert-custom {
+      font-size: 1rem;  /* 在小屏幕上减少字体大小 */
+    }
+  }
+}
+

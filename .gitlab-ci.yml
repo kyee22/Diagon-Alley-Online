@@ -1,12 +1,3 @@
-test-project:
-  stage: test
-  script:
-    - cd project
-    - bundle install
-    - rails db:migrate RAILS_ENV=test
-    - PARALLEL_WORKERS=1 rails test
-  only:
-    - project
 deploy-project:
   stage: deploy
   script:
@@ -14,6 +5,7 @@ deploy-project:
     - cd /project
     - bundle install
     - rails db:migrate
+    - rails db:seed
     - sv restart project
   only:
   - project

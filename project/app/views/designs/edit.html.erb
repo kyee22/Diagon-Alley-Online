@@ -1,12 +1,19 @@
-<% content_for :title, "Editing design" %>
+<% content_for :title, "编辑设计" %>
 
-<h1>Editing design</h1>
-
-<%= render "form", design: @design %>
-
-<br>
-
-<div>
-  <%= link_to "Show this design", @design %> |
-  <%= link_to "Back to designs", designs_path %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>编辑设计</h4>
+        </div>
+        <div class="card-body">
+          <%= render "form", design: @design %>
+        </div>
+        <div class="card-footer text-center">
+          <%= link_to "返回设计列表", designs_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

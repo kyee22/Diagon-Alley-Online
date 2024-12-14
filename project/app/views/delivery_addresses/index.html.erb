@@ -1,20 +1,39 @@
-<h2>我的送货地址</h2>
-<p style="color: green"><%= notice %></p>
+<h2 class="text-center mb-4">我的送货地址</h2>
 
-<%= link_to '添加新送货地址', new_delivery_address_path %>
-<%= button_to '登出', destroy_user_session_path, method: :delete %>
+<p class="text-center text-success"><%= notice %></p>
 
-<ul>
-  <% current_user.delivery_addresses.each do |delivery_address| %>
-    <li>
-      <p><strong>收货人姓名：</strong><%= delivery_address.receiver_name %></p>
-      <p><strong>电话:</strong> <%= delivery_address.phone %></p>
-      <p><strong>邮政编码:</strong> <%= delivery_address.postal_code %></p>
-      <p><strong>地址:</strong> <%= delivery_address.address %></p>
-      <%= link_to '编辑', edit_delivery_address_path(delivery_address) %> |
-      <%= link_to "删除", delivery_address,
-                  data: {turbo_method: :delete, turbo_confirm: "你确定要删除这个送货地址吗?"},
-                  class: "btn btn-outline-danger btn-sm" %>
-    </li>
-  <% end %>
-</ul>
+<div class="d-flex justify-content-center mb-4">
+  <%= link_to '添加新送货地址', new_delivery_address_path, class: 'btn btn-primary btn-lg' %>
+</div>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <% current_user.delivery_addresses.each do |delivery_address| %>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title text-center">送货地址</h5>
+
+            <p><strong>收货人姓名：</strong><%= delivery_address.receiver_name %></p>
+            <p><strong>电话:</strong> <%= delivery_address.phone %></p>
+            <p><strong>邮政编码:</strong> <%= delivery_address.postal_code %></p>
+            <p><strong>地址:</strong> <%= delivery_address.address %></p>
+
+            <div class="d-flex justify-content-between mt-3">
+              <div class="col">
+                <%= link_to '编辑', edit_delivery_address_path(delivery_address), class: 'btn btn-secondary btn-sm' %>
+              </div>
+              <div class="col">
+                <%= button_to "删除",
+                              delivery_address,
+                              method: :delete,
+                              data: { turbo_method: :delete, turbo_confirm: "你确定要删除这个送货地址吗?" },
+                              class: "btn btn-danger btn-sm" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

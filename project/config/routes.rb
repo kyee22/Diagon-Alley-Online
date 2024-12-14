@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :delivery_addresses, only: [:new, :create, :edit, :update, :destroy, :index]
 
+  get 'manage_products', to: 'products#manage'
+
   resources :products do
     resource :favorite, only: [] do
       post 'favorite', to: 'favorites#create', as: :favorite
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :attributes, only: [:index] # 创建一个属性管理入口
     resources :orders, only: %i[index] do
       member do
         post :ship

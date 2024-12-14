@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :ensure_admin, only: %i[new create edit update destroy manage]  # 确保只有管理员才能进行这些操作
 
   # GET /products or /products.json
   def index
@@ -49,12 +50,27 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
-    @product.destroy!
+    # @product.destroy!
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to products_path, status: :see_other, notice: "Product was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
 
     respond_to do |format|
-      format.html { redirect_to products_path, status: :see_other, notice: "Product was successfully destroyed." }
-      format.json { head :no_content }
+      if @product.destroy
+        format.html { redirect_to products_path, notice: "商品删除成功" }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to products_path, notice: @product.errors.full_messages.to_sentence }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
     end
+  end
+
+  # GET /products/manage
+  def manage
+    @products = Product.all
   end
 
   private

@@ -1,21 +1,23 @@
-<div id="<%= dom_id color %>">
-  <p>
-    <strong>Name:</strong>
-    <%= color.name %>
-  </p>
+<!-- _color.html.erb -->
+<div class="card mb-3">
+  <div class="card-body">
+    <p class="mb-3">
+      <strong>名称：</strong>
+      <%= color.name %>
+    </p>
 
-  <p>
-    <strong>Code:</strong>
-    <%= color.code %>
-  </p>
+    <p class="mb-3">
+      <strong>代码：</strong>
+      <%= color.code %>
+    </p>
 
-  <p>
-    <strong>Opacity:</strong>
-    <%= color.opacity %>
-  </p>
+    <p class="mb-3">
+      <strong>透明度：</strong>
+      <%= color.opacity %>
+    </p>
 
-  <p>
-    <b>Products of this color:</b>
-    <%= (color.products.collect { |product| product.name }).join(", ") %>
-  </p>
+    <p class="mt-3">
+      <%= link_to "查看该颜色", color, class: "btn btn-secondary" %>
+    </p>
+  </div>
 </div>

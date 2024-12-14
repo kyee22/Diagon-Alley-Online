@@ -1,5 +1,7 @@
 class ColorsController < ApplicationController
   before_action :set_color, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!   # 确保用户已登录
+  before_action :ensure_admin         # 确保是管理员才能访问
 
   # GET /colors or /colors.json
   def index
@@ -49,11 +51,20 @@ class ColorsController < ApplicationController
 
   # DELETE /colors/1 or /colors/1.json
   def destroy
-    @color.destroy!
-
+    # @color.destroy!
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to colors_path, status: :see_other, notice: "Color was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
     respond_to do |format|
-      format.html { redirect_to colors_path, status: :see_other, notice: "Color was successfully destroyed." }
-      format.json { head :no_content }
+      if @color.destroy
+        format.html { redirect_to colors_path, notice: "颜色已成功删除。" }
+        format.json { render :show, status: :ok, location: @color }
+      else
+        format.html { redirect_to colors_path, notice: @color.errors }
+        format.json { render json: @color.errors, status: :unprocessable_entity }
+      end
     end
   end
 

@@ -1,0 +1,53 @@
+.order {
+  /* 魔法主题按钮样式 */
+  .btn-magic {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-magic:hover {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    transform: scale(1.1);
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+
+  /* 按钮点击时的魔法效果 */
+  .btn-magic:active {
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: scale(0.98);
+  }
+
+  /* 特别的确认按钮样式 */
+  .magic-btn {
+    background: linear-gradient(135deg, #32CD32, #228B22);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .magic-btn:hover {
+    background: linear-gradient(135deg, #228B22, #32CD32);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .magic-btn:active {
+    box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.5);
+    transform: scale(0.98);
+  }
+}

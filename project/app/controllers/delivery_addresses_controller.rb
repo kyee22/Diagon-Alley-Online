@@ -54,15 +54,15 @@ class DeliveryAddressesController < ApplicationController
     # end
     @delivery_address = current_user.delivery_addresses.find(params[:id])
 
-      respond_to do |format|
-        if @delivery_address.destroy
-          format.html { redirect_to delivery_addresses_path, notice: "送货地址删除成功" }
-          format.json { head :no_content }
-        else
-          format.html { redirect_to delivery_addresses_path, notice: @delivery_address.errors.full_messages.to_sentence }
-          format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @delivery_address.destroy
+        format.html { redirect_to delivery_addresses_path, notice: "送货地址删除成功" }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to delivery_addresses_path, notice: @delivery_address.errors.full_messages.to_sentence }
+        format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
       end
+    end
   end
 
 

@@ -1,37 +1,36 @@
-<%= form_with(model: delivery_address) do |form| %>
+<%= form_with(model: delivery_address, local: true, html: { class: 'row g-3' }) do |form| %>
   <% if delivery_address.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(delivery_address.errors.count, "error") %> prohibited this delivery_address from being saved:</h2>
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">保存送货地址时出现<%= pluralize(delivery_address.errors.count, "个错误") %>：</h4>
       <ul>
-        <% delivery_address.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% delivery_address.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-
-  <div>
-    <%= form.label :receiver_name %>
-    <%= form.text_field :receiver_name %>
+  <div class="col-md-6">
+    <%= form.label :receiver_name, "收货人姓名", class: 'form-label' %>
+    <%= form.text_field :receiver_name, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="col-md-6">
+    <%= form.label :phone, "电话", class: 'form-label' %>
+    <%= form.text_field :phone, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :postal_code %>
-    <%= form.text_field :postal_code %>
+  <div class="col-md-6">
+    <%= form.label :postal_code, "邮政编码", class: 'form-label' %>
+    <%= form.text_field :postal_code, class: 'form-control', required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_area :address %>
+  <div class="col-md-6">
+    <%= form.label :address, "详细地址", class: 'form-label' %>
+    <%= form.text_area :address, class: 'form-control', rows: 3, required: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-12 mt-3 text-center">
+    <%= form.submit "提交", class: 'btn btn-primary' %>
   </div>
 <% end %>

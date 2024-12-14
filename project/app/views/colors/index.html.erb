@@ -1,16 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "颜色列表" %>
 
-<% content_for :title, "Colors" %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- 通知信息 -->
+      <% if notice.present? %>
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
 
-<h1>Colors</h1>
+      <h1 class="mb-4">颜色列表</h1>
 
-<div id="colors">
-  <% @colors.each do |color| %>
-    <%= render color %>
-    <p>
-      <%= link_to "Show this color", color %>
-    </p>
-  <% end %>
+      <div id="colors">
+        <% if @colors.any? %>
+          <% @colors.each do |color| %>
+            <%= render color %>
+          <% end %>
+        <% else %>
+          <p class="text-muted">暂无颜色。</p>
+        <% end %>
+      </div>
+
+      <!-- 添加新颜色按钮 -->
+      <div class="text-center mt-4">
+        <%= link_to "新建颜色", new_color_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%= link_to "New color", new_color_path %>

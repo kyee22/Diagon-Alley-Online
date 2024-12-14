@@ -1,5 +1,7 @@
 class TypesController < ApplicationController
   before_action :set_type, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!   # 确保用户已登录
+  before_action :ensure_admin         # 确保是管理员才能访问
 
   # GET /types or /types.json
   def index

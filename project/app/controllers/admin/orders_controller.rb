@@ -17,13 +17,4 @@ class Admin::OrdersController < ApplicationController
     order.update_status(:cancelled)
     redirect_to admin_orders_path, notice: '订单已删除！'
   end
-
-  private
-
-  # 确保用户是管理员
-  def ensure_admin
-    unless current_user.role == 'admin'
-      redirect_to root_path, notice: '权限不足，无法访问该页面！'
-    end
-  end
 end

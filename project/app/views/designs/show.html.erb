@@ -1,10 +1,41 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "设计详情" %>
 
-<%= render @design %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- 通知信息 -->
+      <% if notice.present? %>
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
 
-<div>
-  <%= link_to "Edit this design", edit_design_path(@design) %> |
-  <%= link_to "Back to designs", designs_path %>
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>设计详情</h4>
+        </div>
+        <div class="card-body">
+          <p class="mb-3">
+            <strong>名称：</strong>
+            <%= @design.name %>
+          </p>
 
-  <%= button_to "Destroy this design", @design, method: :delete %>
+          <p class="mb-3">
+            <strong>该设计下的商品：</strong>
+            <%= (@design.products.collect { |product| product.name }).join(", ") %>
+          </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div>
+            <%= link_to "编辑该设计", edit_design_path(@design), class: "btn btn-secondary me-2" %>
+            <%= link_to "返回设计列表", designs_path, class: "btn btn-secondary" %>
+          </div>
+          <div>
+            <%= button_to "删除该设计", @design, method: :delete, data: { confirm: "确定要删除此设计吗？" }, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

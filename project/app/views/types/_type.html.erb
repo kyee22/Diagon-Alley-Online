@@ -1,16 +1,18 @@
-<div id="<%= dom_id type %>">
-  <p>
-    <strong>Name:</strong>
-    <%= type.name %>
-  </p>
+<!-- _type.html.erb -->
+<div class="card mb-3">
+  <div class="card-body">
+    <p class="mb-3">
+      <strong>名称：</strong>
+      <%= type.name %>
+    </p>
 
-  <p>
-    <strong>Rarity:</strong>
-    <%= type.rarity %>
-  </p>
+    <p class="mb-3">
+      <strong>稀有度：</strong>
+      <%= type.rarity %>
+    </p>
 
-  <p>
-    <b>Products of this type:</b>
-    <%= (type.products.collect { |product| product.name }).join(", ") %>
-  </p>
+    <p class="mt-3">
+      <%= link_to "查看该类型", type, class: "btn btn-secondary" %>
+    </p>
+  </div>
 </div>

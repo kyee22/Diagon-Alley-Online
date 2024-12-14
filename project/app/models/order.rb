@@ -6,7 +6,7 @@ class Order < ApplicationRecord
 
   enum status: { pending: 0, paid: 1, shipped: 2, delivered: 3, cancelled: 4 }
 
-  validates :total_price, numericality: { greater_than_or_equal_to: 0 }
+  validates :total_price, numericality: { greater_than_or_equal_toa: 0 }
   validates :delivery_address_id, presence: true
 
   # 状态更新时记录时间

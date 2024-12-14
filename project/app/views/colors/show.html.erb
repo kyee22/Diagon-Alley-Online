@@ -1,10 +1,51 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :title, "颜色详情" %>
 
-<%= render @color %>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- 通知信息 -->
+      <% if notice.present? %>
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
 
-<div>
-  <%= link_to "Edit this color", edit_color_path(@color) %> |
-  <%= link_to "Back to colors", colors_path %>
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>颜色详情</h4>
+        </div>
+        <div class="card-body">
+          <p class="mb-3">
+            <strong>名称：</strong>
+            <%= @color.name %>
+          </p>
 
-  <%= button_to "Destroy this color", @color, method: :delete %>
+          <p class="mb-3">
+            <strong>代码：</strong>
+            <%= @color.code %>
+          </p>
+
+          <p class="mb-3">
+            <strong>透明度：</strong>
+            <%= @color.opacity %>
+          </p>
+
+          <p class="mb-3">
+            <strong>该颜色下的商品：</strong>
+            <%= (@color.products.collect { |product| product.name }).join(", ") %>
+          </p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div>
+            <%= link_to "编辑该颜色", edit_color_path(@color), class: "btn btn-secondary me-2" %>
+            <%= link_to "返回颜色列表", colors_path, class: "btn btn-secondary" %>
+          </div>
+          <div>
+            <%= button_to "删除该颜色", @color, method: :delete, data: { confirm: "确定要删除此颜色吗？" }, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

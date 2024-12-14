@@ -1,5 +1,7 @@
 class DesignsController < ApplicationController
   before_action :set_design, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!   # 确保用户已登录
+  before_action :ensure_admin         # 确保是管理员才能访问
 
   # GET /designs or /designs.json
   def index
@@ -49,12 +51,22 @@ class DesignsController < ApplicationController
 
   # DELETE /designs/1 or /designs/1.json
   def destroy
-    @design.destroy!
-
+    # @design.destroy!
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to designs_path, status: :see_other, notice: "Design was successfully destroyed." }
+    #   format.json { head :no_content }
+    # end
     respond_to do |format|
-      format.html { redirect_to designs_path, status: :see_other, notice: "Design was successfully destroyed." }
-      format.json { head :no_content }
+      if @design.destroy
+        format.html { redirect_to designs_path, notice: "款式已成功删除。" }
+        format.json { render :show, status: :ok, location: @design }
+      else
+        format.html { redirect_to designs_path, notice: @design.errors }
+        format.json { render json: @design.errors, status: :unprocessable_entity }
+      end
     end
+
   end
 
   private
