@@ -42,7 +42,7 @@
 
   <div class="mb-3">
     <%= form.label :type_id, "类型", class: "form-label" %>
-    <%= form.collection_select(:type_id, Type.all.map { |t| [ "#{t.name} (稀有度：#{t.rarity})", t.id ] }, :last, :first, { prompt: "请选择类型" }, { class: "form-select", required: true }) %>
+    <%= form.collection_select(:type_id, Type.all.map { |t| [ "#{t.name} (稀有度：c#{t.rarity})", t.id ] }, :last, :first, { prompt: "请选择类型" }, { class: "form-select", required: true }) %>
     <div class="invalid-feedback">请选择一种类型。</div>
   </div>
 
