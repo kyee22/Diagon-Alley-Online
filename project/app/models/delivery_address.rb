@@ -9,10 +9,10 @@ class DeliveryAddress < ApplicationRecord
   #   验证：电话号应为 11 位数字，且首位必须为 1。
   validates :phone, format: { with: /\A1\d{10}\z/, message: "电话格式无效" }
   # 中国的邮编格式：
-  #   格式：XXXXX（5 位数字）
+  #   格式：XXXXXX（6 位数字）
   #   示例：100000（北京的邮政编码）
-  #   验证：仅由 5 位数字组成。
-  validates :postal_code, format: { with: /\A\d{5}\z/, message: "邮政编码格式无效" }
+  #   验证：仅由 6 位数字组成。
+  validates :postal_code, format: { with: /\A\d{6}\z/, message: "邮政编码格式无效" }
 
   has_many :orders
 
