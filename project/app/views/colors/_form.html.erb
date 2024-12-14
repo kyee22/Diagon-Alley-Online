@@ -22,8 +22,8 @@
   </div>
 
   <div class="mb-3">
-    <%= form.label :opacity, "不不透明度", class: "form-label" %>
-    <%= form.number_field :opacity, class: "form-control" %>
+    <%= form.label :opacity, "不透明度", class: "form-label" %>
+    <%= form.number_field :opacity, class: "form-control", step: "0.01", min: "0", max: "1" %>
   </div>
 
   <div class="d-grid gap-2">
