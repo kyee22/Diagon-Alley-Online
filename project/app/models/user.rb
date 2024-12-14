@@ -19,6 +19,10 @@ class User < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :products, through: :cart_items
 
+  #################### 用户 --> 订单 <-- 产品 ####################
+  has_many :orders, dependent: :destroy
+
+
   private
 
   def set_default_role

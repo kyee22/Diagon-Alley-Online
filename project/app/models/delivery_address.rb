@@ -13,4 +13,19 @@ class DeliveryAddress < ApplicationRecord
   #   示例：100000（北京的邮政编码）
   #   验证：仅由 5 位数字组成。
   validates :postal_code, format: { with: /\A\d{5}\z/, message: "邮政编码格式无效" }
+
+  has_many :orders
+
+  # 在删除之前检查是否与订单关联
+  before_destroy :check_for_associated_orders
+
+  private
+
+  # 检查是否有与订单关联
+  def check_for_associated_orders
+    if orders.any?
+      errors.add(:base, "该收货地址已经被使用，不能删除！")
+      throw :abort # 阻止删除操作
+    end
+  end
 end

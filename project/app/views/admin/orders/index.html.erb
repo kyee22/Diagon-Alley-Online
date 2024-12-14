@@ -1,0 +1,35 @@
+<h1>订单管理</h1>
+
+<%= notice %>
+
+<table>
+  <thead>
+  <tr>
+    <th>订单ID</th>
+    <th>用户</th>
+    <th>订单状态</th>
+    <th>总金额</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.user.email %></td>
+      <td><%= order.status %></td>
+      <td><%= order.total_price %> 元</td>
+      <td>
+        <% if order.status == 'paid' %> <!-- 只有已付款的订单才能发货和取消 -->
+          <%= button_to '发货', ship_admin_order_path(order), method: :post, class: 'btn btn-success' %>
+          <%= button_to '取消订单', cancel_admin_order_path(order), method: :post, class: 'btn btn-danger' %>
+        <% elsif order.status == 'cancelled' %> <!-- 如果订单已取消，禁用按钮 -->
+          <button class="btn btn-secondary" disabled>已取消</button>
+        <% else %> <!-- 其他订单状态下禁用按钮 -->
+          <button class="btn btn-secondary" disabled>不可操作</button>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

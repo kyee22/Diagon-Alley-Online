@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'home#index'
   resources :delivery_addresses
   devise_for :users
   resources :delivery_addresses, only: [:new, :create, :edit, :update, :destroy, :index]
@@ -14,6 +15,26 @@ Rails.application.routes.draw do
   get 'favorities', to: 'favorites#index', as: :favorities
 
   resources :cart_items, only: [:index, :destroy, :update]
+
+  ##################### 订单相关路由
+  resources :orders, only: %i[index create] do
+    member do
+      post :pay
+      post :confirm_receive
+      post :cancel
+    end
+  end
+
+  namespace :admin do
+    resources :orders, only: %i[index] do
+      member do
+        post :ship
+        post :cancel
+      end
+    end
+    resources :products
+  end
+
 
   resources :designs
   resources :sizes

@@ -45,18 +45,31 @@ class DeliveryAddressesController < ApplicationController
 
   # 删除送货地址
   def destroy
+    # @delivery_address = current_user.delivery_addresses.find(params[:id])
+    # @delivery_address.destroy
+    #
+    # respond_to do |format|
+    #   format.html { redirect_to delivery_addresses_path, status: :see_other, notice: "送货地址删除成功" }
+    #   format.json { head :no_content }
+    # end
     @delivery_address = current_user.delivery_addresses.find(params[:id])
-    @delivery_address.destroy
 
-    respond_to do |format|
-      format.html { redirect_to delivery_addresses_path, status: :see_other, notice: "送货地址删除成功" }
-      format.json { head :no_content }
-    end
+      respond_to do |format|
+        if @delivery_address.destroy
+          format.html { redirect_to delivery_addresses_path, notice: "送货地址删除成功" }
+          format.json { head :no_content }
+        else
+          format.html { redirect_to delivery_addresses_path, notice: @delivery_address.errors.full_messages.to_sentence }
+          format.json { render json: @delivery_address.errors, status: :unprocessable_entity }
+        end
+      end
   end
+
 
   private
 
   def delivery_address_params
     params.require(:delivery_address).permit(:receiver_name, :phone, :postal_code, :address)
   end
+
 end

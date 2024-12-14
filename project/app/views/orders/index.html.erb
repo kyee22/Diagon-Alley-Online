@@ -1,0 +1,27 @@
+<h1>我的订单</h1>
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+      <strong>订单号：</strong><%= order.id %><br>
+      <strong>状态：</strong><%= order.status %><br>
+      <strong>总价：</strong><%= order.total_price %> 元<br>
+      <strong>收货地址：</strong><%= order.delivery_address.address %><br>
+      <ul>
+        <% order.order_items.each do |item| %>
+          <li>
+            <%= item.product.name %> - <%= item.quantity %> 个 - 价格：<%= item.price %> 元
+          </li>
+        <% end %>
+      </ul>
+
+      <% if order.pending? %>
+        <%= button_to '付款', pay_order_path(order), method: :post, class: 'btn btn-primary' %>
+        <%= button_to '取消订单', cancel_order_path(order),
+                    method: :post,
+                    data: { turbo_method: :post, turbo_confirm: "你确定要取消这个订单吗?" } %>
+      <% elsif order.shipped? %>
+        <%= button_to '确认收货', confirm_receive_order_path(order), method: :post, class: 'btn btn-success' %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

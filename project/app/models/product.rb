@@ -26,4 +26,7 @@ class Product < ApplicationRecord
   #################### 用户 --> 购物车 <-- 产品 ####################
   has_many :cart_items
   has_many :users, through: :cart_items
+
+  #################### 用户 --> 订单项 <-- 产品 ####################
+  has_many :order_items, dependent: :restrict_with_error
 end
