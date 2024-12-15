@@ -2,7 +2,7 @@
   <% if design.errors.any? %>
     <div class="alert alert-danger" role="alert">
       <h4 class="alert-heading">保存失败：</h4>
-      <p>共发现 <%= pluralize(design.errors.count, "个错误") %>，导致该设计无法保存。</p>
+      <p>共发现 <%= pluralize(design.errors.count, "个错误") %>，导致该款式无法保存。</p>
       <ul>
         <% design.errors.full_messages.each do |message| %>
           <li><%= message %></li>

@@ -1,4 +1,4 @@
-<% content_for :title, "设计列表" %>
+<% content_for :title, "款式列表" %>
 
 <div class="container mt-5">
   <div class="row justify-content-center">
@@ -11,7 +11,7 @@
         </div>
       <% end %>
 
-      <h1 class="mb-4">设计列表</h1>
+      <h1 class="mb-4">款式列表</h1>
 
       <div id="designs">
         <% if @designs.any? %>
@@ -19,13 +19,13 @@
             <%= render design %>
           <% end %>
         <% else %>
-          <p class="text-muted">暂无设计。</p>
+          <p class="text-muted">暂无款式。</p>
         <% end %>
       </div>
 
-      <!-- 添加新设计按钮 -->
+      <!-- 添加新款式按钮 -->
       <div class="text-center mt-4">
-        <%= link_to "新建设计", new_design_path, class: "btn btn-primary" %>
+        <%= link_to "新建款式", new_design_path, class: "btn btn-primary" %>
       </div>
     </div>
   </div>

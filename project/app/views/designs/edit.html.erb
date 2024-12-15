@@ -1,17 +1,17 @@
-<% content_for :title, "编辑设计" %>
+<% content_for :title, "编辑款式" %>
 
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
         <div class="card-header bg-primary text-white">
-          <h4>编辑设计</h4>
+          <h4>编辑款式</h4>
         </div>
         <div class="card-body">
           <%= render "form", design: @design %>
         </div>
         <div class="card-footer text-center">
-          <%= link_to "返回设计列表", designs_path, class: "btn btn-secondary" %>
+          <%= link_to "返回款式列表", designs_path, class: "btn btn-secondary" %>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-<% content_for :title, "设计详情" %>
+<% content_for :title, "款式详情" %>
 
 <div class="container mt-5">
   <div class="row justify-content-center">
@@ -13,7 +13,7 @@
 
       <div class="card">
         <div class="card-header bg-primary text-white">
-          <h4>设计详情</h4>
+          <h4>款式详情</h4>
         </div>
         <div class="card-body">
           <p class="mb-3">
@@ -22,17 +22,17 @@
           </p>
 
           <p class="mb-3">
-            <strong>该设计下的商品：</strong>
+            <strong>该款式下的商品：</strong>
             <%= (@design.products.collect { |product| product.name }).join(", ") %>
           </p>
         </div>
         <div class="card-footer d-flex justify-content-between align-items-center">
           <div>
-            <%= link_to "编辑该设计", edit_design_path(@design), class: "btn btn-secondary me-2" %>
-            <%= link_to "返回设计列表", designs_path, class: "btn btn-secondary" %>
+            <%= link_to "编辑该款式", edit_design_path(@design), class: "btn btn-secondary me-2" %>
+            <%= link_to "返回款式列表", designs_path, class: "btn btn-secondary" %>
           </div>
           <div>
-            <%= button_to "删除该设计", @design, method: :delete, data: { confirm: "确定要删除此设计吗？" }, class: "btn btn-danger" %>
+            <%= button_to "删除该款式", @design, method: :delete, data: { confirm: "确定要删除此款式吗？" }, class: "btn btn-danger" %>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@
               <%= form.submit '更新数量', class: 'btn btn-outline-primary' %>
           <% end %>
         </td>
-        <td><%= cart_item.total_price %> 元</td>
+        <td><%= cart_item.total_price %> 魔法币</td>
         <td><%= cart_item.added_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
         <td>
           <%= button_to '移除', cart_item_path(cart_item), method: :delete, class: 'btn btn-outline-danger' %>

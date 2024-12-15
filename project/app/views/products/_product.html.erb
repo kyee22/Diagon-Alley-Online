@@ -61,25 +61,27 @@
             <%= link_to '查看商品详情', product_path(product), class: 'btn btn-outline-success w-100' %>
           </div>
           <% if current_user %>
-            <div class="col">
-              <% if current_user.favorite_products.include?(product) %>
-                <%= button_to '从收藏夹移除', unfavorite_product_favorite_path(product), method: :delete, class: 'btn btn-outline-warning w-100' %>
-              <% else %>
-                <%= button_to '添加到收藏夹', favorite_product_favorite_path(product), method: :post, class: 'btn btn-outline-info w-100' %>
-              <% end %>
-            </div>
-            <div class="col">
-              <%= button_to '加入购物车', product_cart_items_path(product), method: :post, class: 'btn btn-outline-primary w-100' %>
-            </div>
-            <% if current_user && current_user.role == 'admin' %>
+            <% if current_user && current_user.role == 'user' %>
               <div class="col">
-                <%= link_to "编辑此商品", edit_product_path(product), class: 'btn btn-outline-warning w-100' %>
+                <% if current_user.favorite_products.include?(product) %>
+                  <%= button_to '从收藏夹移除', unfavorite_product_favorite_path(product), method: :delete, class: 'btn btn-outline-warning w-100' %>
+                <% else %>
+                  <%= button_to '添加到收藏夹', favorite_product_favorite_path(product), method: :post, class: 'btn btn-outline-info w-100' %>
+                <% end %>
               </div>
               <div class="col">
-                <%= button_to "删除此商品", product, method: :delete, data: { confirm: '确定要删除此商品吗？' }, class: 'btn btn-outline-danger w-100' %>
+                <%= button_to '加入购物车', product_cart_items_path(product), method: :post, class: 'btn btn-outline-primary w-100' %>
               </div>
             <% end %>
+            <% if current_user && current_user.role == 'admin' %>
+            <div class="col">
+              <%= link_to "编辑此商品", edit_product_path(product), class: 'btn btn-outline-warning w-100' %>
+            </div>
+            <div class="col">
+              <%= button_to "删除此商品", product, method: :delete, data: { confirm: '确定要删除此商品吗？' }, class: 'btn btn-outline-danger w-100' %>
+            </div>
           <% end %>
+        <% end %>
         </div>
       </div>
     </div>
