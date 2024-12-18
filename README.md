@@ -1,6 +1,12 @@
 # Diagon Alley Online 🧙‍♂️✨🛒
 
->   Ruby on Rails Agile Development Project for *Ruby on Rails Agile Development Major Project* @ Beihang University, Fall 2024.
+>   Ruby on Rails Agile Development Project for *Ruby Programming Language* @ Beihang University, Fall 2024.
+
+>   Other Courseware:
+>
+>   *   Ruby Basics: [Programming Assignments @ basics branch](https://github.com/kyee22/Diagon-Alley-Online/tree/basics)
+>   *   Rails Basics (CRUD): [Cookbook3 @ cookbook3 branch](https://github.com/kyee22/Diagon-Alley-Online/tree/cookbook3)
+>   *   Rails Basics (Object-Relation): [Blog4 @ blog4 branch](https://github.com/kyee22/Diagon-Alley-Online/tree/blog4)
 
 ![image-20241215111830991](img/0.png)
 
