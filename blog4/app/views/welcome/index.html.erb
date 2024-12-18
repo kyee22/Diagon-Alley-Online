@@ -14,8 +14,10 @@
   <p class="lead">Explore our collection of insightful posts.</p>
 
   <!-- 添加 rect-btn 类来应用矩形样式 -->
-  <%= link_to "🚀 Explore Blogs  🚀", blogs_path, class: "button-green" %>
-  <%= link_to "✍️ Write Post ✍️️", new_blog_path, class: "button-green" %>
+  <div class="d-grid gap-2">
+    <%= button_to "🚀 Explore Blogs  🚀", blogs_path, class: "btn btn-primary mt-3" %>
+    <%#= button_to "✍️ Write Post ✍️️", new_blog_path, class: "btn btn-primary mt-3" %>
+  </div>
 </div>
 </body>
 </html>
