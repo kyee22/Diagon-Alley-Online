@@ -1,30 +1,27 @@
-image: python:3.11  # 使用合适的Python版本
-
 stages:
+  - setup
   - test
 
-# 安装 pytest 的任务
-install_pytest:
-  stage: test
+# 安装 Python 和 pytest
+setup_python:
+  stage: setup
   script:
-    - which python  # 检查 Python 是否在 PATH 中
-    - which pip     # 检查 pip 是否在 PATH 中
-    - python --version
-    - python -m ensurepip --upgrade  # 确保 pip 已经安装并升级
-    - python -m pip install --upgrade pip  # 升级 pip
-    - python -m pip install pytest  # 安装 pytest
+    - sudo apt-get update  # 更新包管理器索引
+    - sudo apt-get install -y python3 python3-pip  # 安装 Python3 和 pip
+    - python3 --version  # 验证 Python3 是否安装成功
+    - pip3 --version  # 验证 pip 是否安装成功
+    - pip3 install pytest  # 安装 pytest
   artifacts:
     paths:
-      - .pytest_cache/  # 包含pytest的缓存文件，有助于加速后续的测试运行
+      - .pytest_cache/  # 保存 pytest 缓存文件
 
-
-# 定义并行测试任务
+# 运行 pytest 测试
 pytest_parallel:
   stage: test
   dependencies:
-    - install_pytest  # 确保 pytest 被正确安装
+    - setup_python  # 依赖 setup_python 阶段
   parallel:
     matrix:
       - TEST_FILE: ["test_lab1.py", "test_lab3.py", "test_lab4.py"]
   script:
-    - python -m pytest $TEST_FILE  # 使用 python -m pytest 运行测试
+    - python3 -m pytest $TEST_FILE  # 使用 Python3 运行测试
