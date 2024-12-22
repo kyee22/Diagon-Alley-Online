@@ -1,0 +1,62 @@
+name: Python Tests
+
+on:
+  push:
+    branches:
+      - basics  # 修改为远程分支名称
+  pull_request:
+    branches:
+      - basics  # 针对 basics 分支的 PR 触发
+
+jobs:
+  setup-python:
+    name: Setup Python and Install Pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11  # 安装指定版本的 Python
+
+      - name: Install Dependencies
+        run: |
+          python -m ensurepip --upgrade
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Cache Pytest
+        uses: actions/cache@v3
+        with:
+          path: .pytest_cache
+          key: ${{ runner.os }}-pytest-cache
+
+  pytest-parallel:
+    name: Run Pytest in Parallel
+    needs: setup-python
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        test_file:
+          - "test_lab1.py"
+          - "test_lab3.py"
+          - "test_lab4.py"
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11  # 确保与 setup-python 阶段一致
+
+      - name: Install Dependencies
+        run: |
+          python -m ensurepip --upgrade
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: Run Pytest
+        run: python -m pytest ${{ matrix.test_file }}
