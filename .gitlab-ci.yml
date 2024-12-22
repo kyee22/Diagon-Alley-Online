@@ -1,4 +1,4 @@
-image: python:3.11
+image: python:3.11  # 使用合适的Python版本
 
 stages:
   - test
@@ -7,11 +7,16 @@ stages:
 install_pytest:
   stage: test
   script:
-    - pip install --upgrade pip
-    - pip install pytest
+    - which python  # 检查 Python 是否在 PATH 中
+    - which pip     # 检查 pip 是否在 PATH 中
+    - python --version
+    - python -m ensurepip --upgrade  # 确保 pip 已经安装并升级
+    - python -m pip install --upgrade pip  # 升级 pip
+    - python -m pip install pytest  # 安装 pytest
   artifacts:
     paths:
-      - .pytest_cache/
+      - .pytest_cache/  # 包含pytest的缓存文件，有助于加速后续的测试运行
+
 
 # 定义并行测试任务
 pytest_parallel:
@@ -22,4 +27,4 @@ pytest_parallel:
     matrix:
       - TEST_FILE: ["test_lab1.py", "test_lab3.py", "test_lab4.py"]
   script:
-    - pytest $TEST_FILE
+    - python -m pytest $TEST_FILE  # 使用 python -m pytest 运行测试
