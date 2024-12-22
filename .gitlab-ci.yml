@@ -1,0 +1,25 @@
+image: python:3.11
+
+stages:
+  - test
+
+# 安装 pytest 的任务
+install_pytest:
+  stage: test
+  script:
+    - pip install --upgrade pip
+    - pip install pytest
+  artifacts:
+    paths:
+      - .pytest_cache/
+
+# 定义并行测试任务
+pytest_parallel:
+  stage: test
+  dependencies:
+    - install_pytest  # 确保 pytest 被正确安装
+  parallel:
+    matrix:
+      - TEST_FILE: ["test_lab1.py", "test_lab3.py", "test_lab4.py"]
+  script:
+    - pytest $TEST_FILE
